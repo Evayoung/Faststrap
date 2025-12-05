@@ -1,0 +1,81 @@
+[build-system]
+requires = ["hatchling>=1.8.0", "hatch-vcs"]  # Critical fix: ensures editable installs work
+build-backend = "hatchling.build"
+
+[project]
+name = "faststrap"
+dynamic = ["version"]  # Let git tags set version (best practice)
+description = "Modern Bootstrap 5 components for FastHTML - Beautiful UIs in pure Python"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Olorundare Micheal", email = "meshelleva@gmail.com"}
+]
+keywords = ["fasthtml", "bootstrap", "ui", "components", "web", "htmx", "python"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: FastAPI",                    # Valid + smart (FastHTML is FastAPI-inspired)
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: User Interfaces",
+]
+dependencies = [
+    "python-fasthtml>=0.6.0",  # Updated to latest stable
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.0",
+    "mypy>=1.5",
+    "black>=24.0",
+    "ruff>=0.5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Evayoung/Faststrap
+Repository = "https://github.com/Evayoung/Faststrap"
+Issues = "https://github.com/Evayoung/Faststrap/issues"
+
+# Dynamic version from git tags
+[tool.hatch.version]
+source = "vcs"
+
+# Include static assets in wheel
+[tool.hatch.build.targets.wheel]
+packages = ["src/faststrap"]
+include = ["/static"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/static"]
+
+# Tooling config (perfect as-is)
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=faststrap --cov-report=html --cov-report=term-missing"
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+files = ["src/faststrap"]
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E501"]
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
