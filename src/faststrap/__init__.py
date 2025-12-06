@@ -8,14 +8,14 @@ __author__ = "FastStrap Contributors"
 __license__ = "MIT"
 
 # Core functionality
-from .core.assets import add_bootstrap, get_assets
-from .core.base import merge_classes
+from .components.display import Badge, Card
+from .components.feedback import Alert
 
 # Components
 from .components.forms.button import Button
-from .components.display import Badge, Card
-from .components.feedback import Alert
-from .components.layout import Container, Row, Col
+from .components.layout import Col, Container, Row
+from .core.assets import add_bootstrap, get_assets
+from .core.base import merge_classes
 from .utils.icons import Icon
 
 __all__ = [

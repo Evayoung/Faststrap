@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from fasthtml.common import Div, H5, Img
+from fasthtml.common import H5, Div, Img
 
 from ...core.base import merge_classes
 

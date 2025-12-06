@@ -1,6 +1,6 @@
 """Tests for Grid components (Container, Row, Col)."""
 
-from faststrap.components.layout import Container, Row, Col
+from faststrap.components.layout import Col, Container, Row
 
 
 class TestContainer:

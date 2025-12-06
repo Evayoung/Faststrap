@@ -57,7 +57,7 @@ def Container(
     # Build container class
     if fluid is True or fluid == "fluid":
         container_cls = "container-fluid"
-    elif fluid and fluid != False:
+    elif fluid:
         container_cls = f"container-{fluid}"
     else:
         container_cls = "container"
