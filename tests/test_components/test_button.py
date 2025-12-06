@@ -1,12 +1,13 @@
 """Tests for Button component."""
 
+from fasthtml.common import to_xml
 from faststrap.components.forms import Button
 
 
 def test_button_basic():
     """Button renders with basic content."""
     btn = Button("Click Me")
-    html = str(btn)
+    html = to_xml(btn)
 
     assert "Click Me" in html
     assert "btn" in html
@@ -46,7 +47,7 @@ def test_button_disabled():
 def test_button_loading():
     """Button shows loading spinner."""
     btn = Button("Loading", loading=True)
-    html = str(btn)
+    html = to_xml(btn)
 
     assert "spinner-border" in html
     assert "disabled" in html
@@ -61,7 +62,7 @@ def test_button_icon():
 def test_button_htmx():
     """Button supports HTMX attributes."""
     btn = Button("Load", hx_get="/api", hx_target="#result")
-    html = str(btn)
+    html = to_xml(btn)
 
     assert 'hx-get="/api"' in html
     assert 'hx-target="#result"' in html
@@ -70,7 +71,7 @@ def test_button_htmx():
 def test_button_custom_classes():
     """Button merges custom classes."""
     btn = Button("Test", cls="mt-3 custom-class")
-    html = str(btn)
+    html = to_xml(btn)
 
     assert "btn" in html
     assert "mt-3" in html
@@ -80,7 +81,7 @@ def test_button_custom_classes():
 def test_button_htmx_conversion():
     """Test that HTMX attributes convert properly."""
     btn = Button("Test", hx_get="/api", data_value="123", aria_label="Button")
-    html = str(btn)
+    html = to_xml(btn)
 
     assert 'hx-get="/api"' in html, f"Missing hx-get: {html}"
     assert 'data-value="123"' in html, f"Missing data-value: {html}"
@@ -92,7 +93,7 @@ def test_button_htmx_conversion():
 def test_button_html5_attributes():
     """Test that standard HTML attributes work."""
     btn = Button("Test", type="submit", form="form1", autofocus=True)
-    html = str(btn)
+    html = to_xml(btn)
 
     assert 'type="submit"' in html
     assert 'form="form1"' in html
