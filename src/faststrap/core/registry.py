@@ -41,13 +41,9 @@ def register(
             "doc": func.__doc__,
         }
 
-        # Mark function as registered 
-        setattr(
-            func, "__faststrap_registered__", True
-        )  
-        setattr(
-            func, "__faststrap_metadata__", _component_registry[component_name]
-        )  
+        # Mark function as registered
+        func.__faststrap_registered__ = True
+        func.__faststrap_metadata__ = _component_registry[component_name]
 
         return func
 
