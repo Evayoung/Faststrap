@@ -21,10 +21,11 @@ except ImportError:
     def merge_classes(*args: str | None) -> str:  # type: ignore
         """Placeholder - use real implementation."""
         return " ".join(str(c) for c in args if c)
-    
+
     def convert_attrs(kwargs: dict[str, Any]) -> dict[str, Any]:  # type: ignore
         """Placeholder - use real implementation."""
         return kwargs
+
 
 # Type aliases
 VariantType = Literal[

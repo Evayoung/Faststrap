@@ -14,7 +14,7 @@ from fasthtml.common import to_xml  # ← IMPORTANT: Use to_xml(), not str()
 # For template validation only (remove when using):
 if TYPE_CHECKING:
     from fasthtml.common import FT
-    
+
     def ComponentName(*children: object, **kwargs: object) -> FT:  # type: ignore
         """Placeholder for type checking."""
         ...
