@@ -82,11 +82,7 @@ def list_components(category: str | None = None) -> list[str]:
 
 
 def autodiscover() -> None:
-    """Auto-discover and register all components.
-    
-    This is called automatically when importing faststrap.
-    Can be called manually to refresh registry after dynamic imports.
-    """
+    """Auto-discover and register all components."""
     import importlib
     import pkgutil
     
@@ -94,20 +90,19 @@ def autodiscover() -> None:
         from faststrap import components
         
         # Recursively import all component modules
-        for modname in pkgutil.walk_packages(
+        for module_info in pkgutil.walk_packages(
             components.__path__, 
             prefix="faststrap.components."
         ):
             try:
-                importlib.import_module(modname)
+                # Access the .name attribute
+                importlib.import_module(module_info.name)
             except ImportError as e:
-                # Log but don't fail - some components might have optional deps
                 import warnings
-                warnings.warn(f"Could not import {modname}: {e}", ImportWarning)
+                warnings.warn(f"Could not import {module_info.name}: {e}", ImportWarning)
     
     except ImportError:
         pass  # Components not yet installed
-
 
 # Call autodiscover when registry is imported
 autodiscover()
