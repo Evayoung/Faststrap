@@ -47,7 +47,7 @@ def toggle_theme():
     current_theme["theme"] = "light" if current_theme["theme"] == "dark" else "dark"
 
     # Return JavaScript to update HTML data-bs-theme attribute
-    # This is the ONLY way to change theme without page reload
+    # This is the ONLY way to change theme without page reload for now
     return NotStr(
         f"""
         <script>

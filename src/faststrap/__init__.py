@@ -3,7 +3,7 @@
 Build beautiful web UIs in pure Python with zero JavaScript knowledge.
 """
 
-__version__ = "0.2.0"  # ← Update version!
+__version__ = "0.2.4"  # Update version!
 __author__ = "FastStrap Contributors"
 __license__ = "MIT"
 
@@ -12,18 +12,27 @@ __license__ = "MIT"
 from .components.display import Badge, Card
 
 # Feedback
-from .components.feedback import Alert, Modal, Toast, ToastContainer
-
-# Forms
-from .components.forms import Button, ButtonGroup, ButtonToolbar
+from .components.feedback import Alert, Modal, Progress, ProgressBar, Spinner, Toast, ToastContainer
+from .components.forms import Button, ButtonGroup, ButtonToolbar, Input, Select
 
 # Layout
 from .components.layout import Col, Container, Row
 
 # Navigation
-from .components.navigation import Drawer, Navbar
+from .components.navigation import (
+    Breadcrumb,
+    Drawer,
+    Dropdown,
+    DropdownDivider,
+    DropdownItem,
+    Navbar,
+    Pagination,
+    TabPane,
+    Tabs,
+)
 from .core.assets import add_bootstrap, get_assets
 from .core.base import merge_classes
+from .utils import cleanup_static_resources, get_faststrap_static_url
 
 # Utils
 from .utils.icons import Icon
@@ -37,6 +46,8 @@ __all__ = [
     "Button",
     "ButtonGroup",
     "ButtonToolbar",
+    "Input",
+    "Select",
     # Display
     "Badge",
     "Card",
@@ -45,6 +56,9 @@ __all__ = [
     "Toast",
     "ToastContainer",
     "Modal",
+    "Progress",
+    "ProgressBar",
+    "Spinner",
     # Layout
     "Container",
     "Row",
@@ -52,8 +66,17 @@ __all__ = [
     # Navigation
     "Drawer",
     "Navbar",
+    "Pagination",
+    "Breadcrumb",
+    "Dropdown",
+    "DropdownItem",
+    "DropdownDivider",
+    "Tabs",
+    "TabPane",
     # Utils
     "Icon",
+    "get_faststrap_static_url",
+    "cleanup_static_resources",
     # Metadata
     "__version__",
     "__author__",

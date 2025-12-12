@@ -74,17 +74,12 @@ def test_endpoint():
     return Div("HTMX GET request successful!", cls="alert alert-success")
 
 
-@app.post("/submit")  # ← THIS IS THE FIX
+@app.post("/submit")
 def submit():
     return Div("Form submitted via HTMX POST!", cls="alert alert-info")
 
 
 if __name__ == "__main__":
-    print("FastStrap Complete Test Server")
     print("Open: http://localhost:5001")
-    print("Features tested:")
-    print("   - All button variants, sizes, states")
-    print("   - Icons in buttons + standalone Icon()")
-    print("   - HTMX GET and POST")
     print("   - Dark/light theme switching")
     serve()

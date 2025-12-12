@@ -103,7 +103,7 @@ Have an idea? [Start a discussion](https://github.com/Evayoung/Faststrap/discuss
 
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/Faststrap.git
+git clone https://github.com/Evayoung/Faststrap.git
 cd Faststrap
 
 # Add upstream remote

@@ -21,7 +21,7 @@ add_bootstrap(app, theme="light")
 @app.route("/")
 def home():
     return Container(
-        H1("FastStrap Phase 1 Complete! 🎉", cls="mb-4"),
+        H1("FastStrap Phase 1 Complete!", cls="mb-4"),
         P("All 5 Phase 1 components are working!", cls="lead mb-5"),
         # Buttons Section
         Div(
@@ -128,12 +128,6 @@ def home():
 
 
 if __name__ == "__main__":
-    print("🚀 FastStrap Phase 1 Complete Demo")
-    print("📍 Visit: http://localhost:5001")
-    print("\n✅ Components included:")
-    print("   - Button (with variants, sizes, icons, loading)")
-    print("   - Badge (with pill style)")
-    print("   - Alert (with dismissible, heading)")
-    print("   - Card (with header, footer, images)")
-    print("   - Grid (Container, Row, Col with responsive layout)")
+    print(" FastStrap Phase 1 Complete Demo")
+    print(" Visit: http://localhost:5001")
     serve()

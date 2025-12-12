@@ -14,13 +14,13 @@
 
 FastHTML is amazing for building web apps in pure Python, but it lacks pre-built UI components. FastStrap fills that gap by providing:
 
-✅ **12+ Bootstrap components** - Buttons, Cards, Modals, Navbars, Forms, and more  
+✅ **20 Bootstrap components** - Buttons, Cards, Modals, Forms, Navigation, and more  
 ✅ **Zero JavaScript knowledge required** - Components just work  
 ✅ **No build steps** - Pure Python, no npm/webpack/vite  
 ✅ **Full HTMX integration** - Dynamic updates without page reloads  
 ✅ **Dark mode built-in** - Automatic theme switching  
 ✅ **Type-safe** - Full type hints for better IDE support  
-✅ **Pythonic API** - Kwargs style that feels natural
+✅ **Pythonic API** - Intuitive kwargs style
 
 ---
 
@@ -56,6 +56,52 @@ That's it! You now have a modern, responsive web app with zero JavaScript.
 
 ---
 
+## Available Components (20 Total)
+
+### ✅ Phase 1+2 (v0.1.0 - v0.2.2) - 12 Components
+
+| Component | Description | Status |
+|-----------|-------------|--------|
+| **Button** | Buttons with variants, sizes, loading states | ✅ |
+| **ButtonGroup** | Grouped buttons and toolbars | ✅ |
+| **Badge** | Status indicators and labels | ✅ |
+| **Card** | Content containers with headers/footers | ✅ |
+| **Alert** | Dismissible alerts with variants | ✅ |
+| **Modal** | Dialog boxes and confirmations | ✅ |
+| **Drawer** | Offcanvas side panels | ✅ |
+| **Toast** | Auto-dismiss notifications | ✅ |
+| **Navbar** | Responsive navigation bars | ✅ |
+| **Container/Row/Col** | Bootstrap grid system | ✅ |
+| **Icon** | Bootstrap Icons helper | ✅ |
+
+### ✅ Phase 3 (v0.3.0 - Released!) - 8 New Components
+
+| Component | Description | Status |
+|-----------|-------------|--------|
+| **Tabs** | Navigation tabs and pills | ✅ NEW |
+| **Dropdown** | Contextual menus with split buttons | ✅ NEW |
+| **Input** | Text form controls with validation | ✅ NEW |
+| **Select** | Dropdown selections (single/multiple) | ✅ NEW |
+| **Breadcrumb** | Navigation trail with icons | ✅ NEW |
+| **Pagination** | Page navigation with customization | ✅ NEW |
+| **Spinner** | Loading indicators (border/grow) | ✅ NEW |
+| **Progress** | Progress bars with animations | ✅ NEW |
+
+### 🚧 Phase 4 (v0.4.0 - Planned Q2 2025)
+
+- **Table** - Responsive data tables
+- **Accordion** - Collapsible panels
+- **Carousel** - Image sliders
+- **ListGroup** - Versatile lists
+- **Tooltip** - Contextual hints
+- **Popover** - Rich overlays
+- **Checkbox/Radio/Range** - Form controls
+- **FileInput** - File uploads
+
+See [ROADMAP.md](ROADMAP.md) for complete timeline.
+
+---
+
 ## Core Concepts
 
 ### 1. Adding Bootstrap to Your App
@@ -66,13 +112,16 @@ from faststrap import add_bootstrap
 
 app = FastHTML()
 
-# Basic setup
+# Basic setup (includes default FastStrap favicon)
 add_bootstrap(app)
 
 # With dark theme
 add_bootstrap(app, theme="dark")
 
-# Using CDN (default is local assets)
+# Custom favicon
+add_bootstrap(app, theme="dark", favicon_url="/static/logo.svg")
+
+# Using CDN
 add_bootstrap(app, use_cdn=True)
 ```
 
@@ -81,34 +130,36 @@ add_bootstrap(app, use_cdn=True)
 All components follow Bootstrap's conventions with Pythonic names:
 
 ```python
-from faststrap import Button, Badge, Alert, Card, Modal
+from faststrap import Button, Badge, Alert, Input, Select, Tabs
 
-# Button with variants
-Button("Click me", variant="primary", size="lg")
+# Button with HTMX
+Button("Save", variant="primary", hx_post="/save", hx_target="#result")
 
-# Alert with icon
-Alert("Success!", variant="success", dismissible=True)
+# Form inputs
+Input("email", input_type="email", label="Email Address", required=True)
+Select("country", ("us", "USA"), ("uk", "UK"), label="Country")
 
-# Card with header and footer
-Card(
-    "Main content here",
-    header="Card Title",
-    footer=Button("Action")
+# Navigation tabs
+Tabs(
+    ("home", "Home", True),
+    ("profile", "Profile"),
+    ("settings", "Settings")
 )
 ```
 
 ### 3. HTMX Integration
 
-All components support HTMX attributes for dynamic behavior:
+All components support HTMX attributes:
 
 ```python
-Button(
-    "Load More",
-    variant="primary",
-    hx_get="/api/items",
-    hx_target="#items",
-    hx_swap="beforeend"
-)
+# Dynamic button
+Button("Load More", hx_get="/api/items", hx_swap="beforeend")
+
+# Live search input
+Input("search", placeholder="Search...", hx_get="/search", hx_trigger="keyup changed delay:500ms")
+
+# Dynamic dropdown
+Select("category", ("a", "A"), ("b", "B"), hx_get="/filter", hx_trigger="change")
 ```
 
 ### 4. Responsive Grid System
@@ -127,118 +178,106 @@ Container(
 
 ---
 
-## Available Components
-
-### ✅ Phase 1 (v0.1.0 - v0.2.1)
-
-| Component | Description | Status |
-|-----------|-------------|--------|
-| **Button** | Buttons with variants, sizes, loading states | ✅ |
-| **ButtonGroup** | Grouped buttons and toolbars | ✅ |
-| **Badge** | Status indicators and labels | ✅ |
-| **Card** | Content containers with headers/footers | ✅ |
-| **Alert** | Dismissible alerts with variants | ✅ |
-| **Modal** | Dialog boxes and confirmations | ✅ |
-| **Drawer** | Offcanvas side panels | ✅ |
-| **Toast** | Auto-dismiss notifications | ✅ |
-| **Navbar** | Responsive navigation bars | ✅ |
-| **Container/Row/Col** | Bootstrap grid system | ✅ |
-| **Icon** | Bootstrap Icons helper | ✅ |
-
-### 🚧 Phase 2 (v0.3.0 - Planned Q1 2025)
-
-- **Tabs** - Navigation tabs and pills
-- **Dropdown** - Contextual menus
-- **Input** - Text form controls with validation
-- **Select** - Dropdown selections
-- **Breadcrumb** - Navigation trails
-- **Pagination** - Page navigation
-- **Spinner** - Loading indicators
-- **Progress** - Progress bars
-
-See [ROADMAP.md](ROADMAP.md) for complete feature timeline.
-
----
-
 ## Examples
 
-### Modal Dialog
+### Form with Validation
 
 ```python
-from faststrap import Modal, Button
+from faststrap import Input, Select, Button, Card
 
-# Create modal
-modal = Modal(
-    "Are you sure you want to delete this item?",
-    modal_id="deleteModal",
-    title="Confirm Delete",
-    footer=Div(
-        Button("Cancel", variant="secondary", data_bs_dismiss="modal"),
-        Button("Delete", variant="danger")
+Card(
+    Input(
+        "email",
+        input_type="email",
+        label="Email Address",
+        placeholder="you@example.com",
+        required=True,
+        help_text="We'll never share your email"
+    ),
+    Input(
+        "password",
+        input_type="password",
+        label="Password",
+        required=True,
+        size="lg"
+    ),
+    Select(
+        "country",
+        ("us", "United States"),
+        ("uk", "United Kingdom"),
+        ("ca", "Canada"),
+        label="Country",
+        required=True
+    ),
+    Button("Sign Up", variant="primary", type="submit", cls="w-100"),
+    header="Create Account"
+)
+```
+
+### Navigation with Tabs
+
+```python
+from faststrap import Tabs, TabPane, Card
+
+Card(
+    Tabs(
+        ("profile", "Profile", True),
+        ("settings", "Settings"),
+        ("billing", "Billing")
+    ),
+    Div(
+        TabPane("Profile content here", tab_id="profile", active=True),
+        TabPane("Settings content here", tab_id="settings"),
+        TabPane("Billing content here", tab_id="billing"),
+        cls="tab-content p-3"
     )
 )
-
-# Trigger button
-trigger = Button("Delete Item", variant="danger", 
-                data_bs_toggle="modal", data_bs_target="#deleteModal")
 ```
 
-### Navigation Drawer
+### Loading States
 
 ```python
-from faststrap import Drawer, Button, Nav, A
+from faststrap import Spinner, Progress, Button
 
-# Create drawer
-drawer = Drawer(
-    Nav(
-        A("Home", href="/", cls="nav-link"),
-        A("About", href="/about", cls="nav-link"),
-        A("Contact", href="/contact", cls="nav-link"),
-        cls="flex-column"
-    ),
-    drawer_id="sidebar",
-    title="Menu",
-    placement="start"
+# Spinner in button
+Button(
+    Spinner(size="sm", label="Loading..."),
+    " Processing...",
+    variant="primary",
+    disabled=True
 )
 
-# Trigger button
-trigger = Button("Open Menu", data_bs_toggle="offcanvas", 
-                data_bs_target="#sidebar")
-```
+# Progress bar
+Progress(75, variant="success", striped=True, animated=True, label="75%")
 
-### Responsive Navbar
-
-```python
-from faststrap import Navbar
-
-nav = Navbar(
-    brand="MyApp",
-    brand_href="/",
-    links=[
-        ("Home", "/"),
-        ("Features", "/features"),
-        ("Pricing", "/pricing"),
-    ],
-    variant="dark",
-    expand="lg"
+# Stacked progress
+Div(
+    ProgressBar(30, variant="success"),
+    ProgressBar(20, variant="warning"),
+    ProgressBar(10, variant="danger"),
+    cls="progress"
 )
 ```
 
-### Toast Notifications
+### Pagination
 
 ```python
-from faststrap import Toast, ToastContainer
+from faststrap import Pagination, Breadcrumb
 
-# Toast container (add once to layout)
-container = ToastContainer(placement="top-end")
+# Breadcrumb
+Breadcrumb(
+    (Icon("house"), "/"),
+    ("Products", "/products"),
+    ("Laptops", None)
+)
 
-# Individual toast
-toast = Toast(
-    "Profile updated successfully!",
-    title="Success",
-    variant="success",
-    autohide=True,
-    delay=3000
+# Page navigation
+Pagination(
+    current_page=5,
+    total_pages=20,
+    size="lg",
+    align="center",
+    show_first_last=True
 )
 ```
 
@@ -251,25 +290,27 @@ faststrap/
 ├── src/faststrap/
 │   ├── __init__.py              # Public API
 │   ├── core/
-│   │   ├── assets.py            # Bootstrap injection
+│   │   ├── assets.py            # Bootstrap injection + favicon
 │   │   ├── base.py              # Component base classes
 │   │   └── registry.py          # Component registry
 │   ├── components/
-│   │   ├── forms/               # Buttons, inputs
-│   │   ├── display/             # Cards, badges
-│   │   ├── feedback/            # Alerts, toasts, modals
-│   │   ├── navigation/          # Navbars, drawers
-│   │   └── layout/              # Grid system
+│   │   ├── forms/               # Button, Input, Select
+│   │   ├── display/             # Card, Badge
+│   │   ├── feedback/            # Alert, Toast, Modal, Spinner, Progress
+│   │   ├── navigation/          # Navbar, Drawer, Tabs, Dropdown, Breadcrumb, Pagination
+│   │   └── layout/              # Container, Row, Col
+│   ├── static/                  # Bootstrap assets + favicon
+│   │   ├── css/
+│   │   │   ├── bootstrap.min.css
+│   │   │   └── bootstrap-icons.min.css
+│   │   ├── js/
+│   │   │   └── bootstrap.bundle.min.js
+│   │   └── favicon.svg          # Default FastStrap favicon
+│   ├── templates/               # Component templates
 │   └── utils/
 │       ├── icons.py             # Bootstrap Icons
-│       └── attrs.py             # Attribute helpers
-├── static/                      # Bootstrap assets
-│   ├── css/
-│   │   ├── bootstrap.min.css
-│   │   └── bootstrap-icons.min.css
-│   └── js/
-│       └── bootstrap.bundle.min.js
-├── tests/                       # Pytest suite (121 tests)
+│       └── attrs.py             # Centralized attribute conversion
+├── tests/                       # 219 tests (80% coverage)
 ├── examples/                    # Demo applications
 └── docs/                        # Documentation
 ```
@@ -320,14 +361,10 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ### Quick Contribution Guide
 
-1. **Pick a component** from [ROADMAP.md](ROADMAP.md)
+1. **Pick a component** from [ROADMAP.md](ROADMAP.md) Phase 4
 2. **Follow patterns** in [BUILDING_COMPONENTS.md](BUILDING_COMPONENTS.md)
-3. **Write tests** - Aim for 100% coverage
+3. **Write tests** - Aim for 100% coverage (8-15 tests per component)
 4. **Submit PR** - We review within 48 hours
-
-### Component Development
-
-See [BUILDING_COMPONENTS.md](BUILDING_COMPONENTS.md) for detailed guide on building new components.
 
 ---
 
@@ -343,17 +380,18 @@ See [BUILDING_COMPONENTS.md](BUILDING_COMPONENTS.md) for detailed guide on build
 
 ## Roadmap
 
-### v0.2.1 (Current)
-- ✅ 12 core components
-- ✅ 121 tests, 84% coverage
-- ✅ Complete documentation
-- ✅ HTMX integration
+### v0.3.0 (Current - Released Dec 2024)
+- ✅ 20 components (12 + 8 new)
+- ✅ 219 tests, 80% coverage
+- ✅ Centralized convert_attrs() utility
+- ✅ Default FastStrap favicon
+- ✅ Full HTMX integration
 
-### v0.3.0 (Q1 2025)
-- Form components (Input, Select, Checkbox, Radio)
-- Navigation (Tabs, Dropdown, Breadcrumb, Pagination)
-- Feedback (Spinner, Progress)
-- 20+ components total
+### v0.4.0 (Q2 2025)
+- Table, Accordion, Carousel, ListGroup
+- Tooltip, Popover
+- Checkbox, Radio, Range, FileInput
+- 28+ components total
 
 ### v1.0.0 (Q4 2025)
 - 50+ components
@@ -370,7 +408,18 @@ See [ROADMAP.md](ROADMAP.md) for complete timeline.
 - 📖 **Documentation**: [GitHub README](https://github.com/Evayoung/Faststrap#readme)
 - 🐛 **Bug Reports**: [GitHub Issues](https://github.com/Evayoung/Faststrap/issues)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/Evayoung/Faststrap/discussions)
-- 🎮 **Discord**: Join [FastHTML Discord](https://discord.gg/qcXvcxMhdP)
+- 🎮 **Discord**: [FastHTML Community](https://discord.gg/qcXvcxMhdP)
+
+---
+
+## Stats
+
+- **20 components** across 5 categories
+- **219 passing tests** (80% coverage)
+- **Bootstrap 5.3.3** compliant
+- **Python 3.10+** with modern type hints
+- **Zero custom JavaScript** required
+- **Full HTMX integration**
 
 ---
 

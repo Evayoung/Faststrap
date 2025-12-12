@@ -5,6 +5,124 @@ All notable changes to FastStrap will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [0.3.0] - 2024-12-13
+
+### Major Release: 8 New Components Added!
+
+**Phase 3 Complete** - FastStrap now includes 20 total components (12 from Phase 1+2, 8 new in Phase 3)
+
+### Added - Navigation Components (4)
+- **Tabs** - Navigation tabs and pills with content panes
+  - Support for tabs/pills variants
+  - Vertical tab layout option
+  - HTMX mode for dynamic content loading
+  - TabPane helper for content management
+- **Dropdown** - Contextual menus with full customization
+  - Split button support
+  - Directional dropdowns (up, start, end)
+  - String-based dividers ("---")
+  - DropdownItem and DropdownDivider helpers
+- **Breadcrumb** - Navigation trail with icon support
+  - Auto-active last item
+  - Custom href handling
+  - Full accessibility (ARIA)
+- **Pagination** - Page navigation with options
+  - Customizable page range
+  - First/last page buttons
+  - Size variants (sm, lg)
+  - Alignment options (start, center, end)
+
+### Added - Form Components (2)
+- **Input** - Text form controls with validation
+  - All HTML5 input types (text, email, password, number, tel, url, search, date, time)
+  - Label and help text support
+  - Size variants (sm, lg)
+  - Required field indicators
+  - Full ARIA accessibility
+- **Select** - Dropdown selections
+  - Single and multiple selection modes
+  - Default selection support
+  - Label and help text
+  - Size variants
+  - Full accessibility
+
+### Added - Feedback Components (2)
+- **Spinner** - Loading indicators
+  - Border and grow animation types
+  - Color variants
+  - Small size support
+  - Screen reader labels
+- **Progress** - Progress bars
+  - Percentage-based progress
+  - Color variants
+  - Striped and animated styles
+  - Custom height support
+  - ProgressBar helper for stacked bars
+
+### Added - Core Features
+- **Centralized convert_attrs()** utility in `utils/attrs.py`
+  - Consistent HTMX attribute handling across all components
+  - Converts Python snake_case to HTML kebab-case (hx_get → hx-get)
+- **Default Favicon** - FastStrap now includes a built-in favicon
+  - Automatically injected with `add_bootstrap()`
+  - Can be disabled with `include_favicon=False`
+  - Can be customized with `favicon_url` parameter
+  - Supports SVG, PNG, ICO, JPG, and WebP formats
+
+### Improved
+- All components now use consistent attribute conversion
+- Better type hints throughout (Python 3.10+ syntax)
+- Enhanced documentation with 5-10 examples per component
+- Improved error messages and validation
+- Better ARIA accessibility support
+
+### Fixed
+- Dropdown divider detection (now uses string "---" instead of Hr object)
+- ARIA attribute handling in form components
+- ID linkage between labels and inputs
+
+### Technical
+- 219 tests passing (80% coverage)
+- Full mypy type checking compliance
+- All components support HTMX attributes
+- Bootstrap 5.3.3 compliant
+
+### Documentation
+- Complete examples for all 8 new components
+- Updated BUILDING_COMPONENTS.md guide
+- Updated ROADMAP.md to reflect Phase 3 completion
+
+[0.3.0]: https://github.com/Evayoung/Faststrap/compare/v0.2.2...v0.3.0
+
+## [0.2.3] - 2025-12-09
+
+### Fixed
+- **Critical**: Local Bootstrap assets (`bootstrap.min.css`, `bootstrap.bundle.min.js`, icons, etc.) are now correctly included in the PyPI wheel when `use_cdn=False`. Previously, offline/local mode resulted in missing styles and broken JavaScript (modals, drawers, toasts).  
+  → All local assets now work out of the box with no extra setup.
+- Fixed a `mypy` type error when mounting static files by properly handling `importlib.resources.files(...).as_posix()` and casting `Traversable` objects for `StaticFiles`.
+
+### Added
+- **Developer Templates** — New `src/faststrap/templates/` directory with:
+  - `component_template.py` → Boilerplate for rapid, consistent component development
+  - `test_file_template.py` → Standardized pytest template with `to_xml()` assertions and HTMX/data-attribute tests
+- These templates enforce FastStrap’s coding standards and dramatically speed up contribution.
+
+### Changed
+- **Packaging Improvement**: Moved the `static/` directory into `src/faststrap/static/`  
+  → Ensures assets are reliably included in built wheels/sdists (modern Python packaging best practice).
+- **Component Organization**: Reorganized components into clearly defined categories:
+  - `forms/` → Buttons, inputs, groups
+  - `display/` → Badges, cards
+  - `feedback/` → Alerts, toasts, modals
+  - `navigation/` → Navbar, drawer/offcanvas
+  - `layout/` → Container, Row, Col  
+  → Much easier for contributors to navigate and extend.
+
+This release significantly improves reliability in offline/air-gapped environments and sets a strong foundation for community contributions and long-term maintainability.
+
+---
+
 ## [0.2.2] - 2025-12-09
 
 ### Added

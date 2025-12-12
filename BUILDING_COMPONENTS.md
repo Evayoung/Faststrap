@@ -12,9 +12,10 @@
 4. Submit PR
 
 **Best templates to copy:**
-- Simple component: `badge.py`
-- Complex component: `card.py`
-- Interactive (Bootstrap JS): `modal.py`
+- Simple component: `badge.py` or `spinner.py`
+- Form component: `input.py` or `select.py`
+- Complex component: `card.py` or `tabs.py`
+- Interactive (Bootstrap JS): `modal.py` or `dropdown.py`
 
 ---
 
@@ -24,11 +25,11 @@ Before submitting, ensure:
 
 - [ ] File in correct directory (`forms/`, `display/`, `feedback/`, `navigation/`, `layout/`)
 - [ ] Function uses Python 3.10+ type hints (`str | None` not `Optional[str]`)
-- [ ] Includes `_convert_attrs()` helper for HTMX support
+- [ ] Uses `convert_attrs()` from `utils.attrs` for HTMX support
 - [ ] Uses `merge_classes()` from `core.base` for CSS
-- [ ] Comprehensive docstring with examples
+- [ ] Comprehensive docstring with 5+ examples
 - [ ] Test file with 8-15 tests
-- [ ] Exported in `__init__.py` files
+- [ ] Exported in all `__init__.py` files
 - [ ] Works with `to_xml()` (not just `str()`)
 
 ---
@@ -73,6 +74,12 @@ def ComponentName(
 
         Custom styling:
         >>> ComponentName("Custom", cls="mt-3 shadow")
+
+        With icons:
+        >>> ComponentName(Icon("check"), "Complete", variant="success")
+
+        Multiple children:
+        >>> ComponentName("First", "Second", "Third")
 
     See Also:
         Bootstrap docs: https://getbootstrap.com/docs/5.3/components/[name]/
@@ -127,15 +134,17 @@ user_cls = kwargs.pop("cls", "")
 all_classes = merge_classes("btn btn-primary", user_cls)
 ```
 
-### 3. **HTMX Attribute Conversion**
+### 3. **Attribute Conversion (CRITICAL)**
 
 ```python
-# Always include _convert_attrs() function
-attrs.update(_convert_attrs(kwargs))
+from ...utils.attrs import convert_attrs
+
+# Always use convert_attrs() for consistent HTMX/data/ARIA handling
+attrs.update(convert_attrs(kwargs))
 
 # This allows:
-Button("Save", hx_post="/save", hx_target="#result")
-# To become: <button hx-post="/save" hx-target="#result">Save</button>
+Button("Save", hx_post="/save", data_id="123", aria_label="Save button")
+# To become: <button hx-post="/save" data-id="123" aria-label="Save button">
 ```
 
 ### 4. **Bootstrap Variants**
@@ -148,13 +157,15 @@ VariantType = Literal[
 ]
 
 # Apply as:
-classes.append(f"btn-{variant}")  # OR
-classes.append(f"text-bg-{variant}")  # For colored backgrounds
+classes.append(f"btn-{variant}")  # Buttons
+classes.append(f"text-bg-{variant}")  # Badges
+classes.append(f"alert-{variant}")  # Alerts
+classes.append(f"bg-{variant}")  # Progress bars
 ```
 
 ### 5. **Component IDs (Special Handling)**
 
-If your component requires an `id` (like Modal, Drawer):
+If your component requires an `id` (like Modal, Drawer, Tabs):
 
 ```python
 def Modal(
@@ -162,16 +173,15 @@ def Modal(
     modal_id: str,  # ← Use custom param name, NOT "id"
     **kwargs: Any
 ) -> Div:
-    # Build component first
-    result = Div(*parts, **attrs)
+    # Build attributes WITHOUT id
+    attrs: dict[str, Any] = {"cls": classes, "role": "dialog"}
+    attrs.update(convert_attrs(kwargs))
     
-    # Set id AFTER creation (bypasses FastHTML quirk)
-    result.attrs['id'] = modal_id
-    
-    return result
+    # Return with id as named parameter
+    return Div(*parts, id=modal_id, **attrs)
 ```
 
-**Why:** FastHTML's `str()` has a bug with `id` parameter. Use `modal_id`/`drawer_id`/etc.
+**Why:** Use descriptive parameter names like `modal_id`, `drawer_id`, `tab_id` for clarity.
 
 ---
 
@@ -230,6 +240,14 @@ def test_component_data_attributes():
     
     assert 'data-id="123"' in html
     assert 'data-type="info"' in html
+
+
+def test_component_aria_attributes():
+    """Component handles ARIA attributes."""
+    comp = ComponentName("Test", aria_label="Test button")
+    html = to_xml(comp)
+    
+    assert 'aria-label="Test button"' in html
 ```
 
 **CRITICAL:** Always use `to_xml(component)`, **never** `str(component)` due to FastHTML bug.
@@ -243,10 +261,10 @@ src/faststrap/components/
 ├── display/          # Visual elements (Badge, Card, Avatar)
 │   ├── __init__.py
 │   └── component.py
-├── feedback/         # User feedback (Alert, Toast, Modal)
+├── feedback/         # User feedback (Alert, Toast, Modal, Spinner, Progress)
 ├── forms/            # Form inputs (Button, Input, Select)
 ├── layout/           # Layout helpers (Container, Row, Col)
-└── navigation/       # Navigation (Navbar, Tabs, Breadcrumb)
+└── navigation/       # Navigation (Navbar, Tabs, Drawer, Dropdown, Breadcrumb, Pagination)
 
 tests/test_components/
 └── test_component.py
@@ -270,27 +288,29 @@ When building a component, reference Bootstrap docs:
 
 ## 🚀 Component Priority List
 
-### **Phase 2 (Next):**
-1. Tabs
-2. Dropdown
-3. Input (text, email, password)
-4. Select
-5. Breadcrumb
-6. Pagination
-7. Spinner
-8. Progress
+### **✅ Phase 3 Complete (v0.3.0)**
+1. ✅ Tabs & TabPane
+2. ✅ Dropdown (with DropdownItem, DropdownDivider)
+3. ✅ Input (all HTML5 types)
+4. ✅ Select (single/multiple)
+5. ✅ Breadcrumb
+6. ✅ Pagination
+7. ✅ Spinner
+8. ✅ Progress & ProgressBar
 
-### **Phase 3:**
-9. Table
-10. Accordion
-11. Carousel
-12. ListGroup
-13. Tooltip
-14. Popover
-15. Checkbox/Radio/Switch
-16. Range
-17. FileInput
-18. FormValidation
+### **🎯 Phase 4 Next (v0.4.0 - Q2 2025):**
+9. Table (responsive, striped, hoverable)
+10. Accordion (collapsible panels)
+11. Carousel (image sliders)
+12. ListGroup (versatile lists)
+13. Tooltip (contextual hints)
+14. Popover (rich overlays)
+15. Checkbox (standard, switch, inline)
+16. Radio (standard, button style)
+17. Range (sliders)
+18. FileInput (file uploads)
+
+See [ROADMAP.md](ROADMAP.md) for complete timeline.
 
 ---
 
@@ -299,22 +319,28 @@ When building a component, reference Bootstrap docs:
 When asking an LLM to build a component:
 
 **Good prompt:**
-> "Build the Tabs component for FastStrap following BUILDING_COMPONENTS.md. Use Badge.py as template. Include nav-tabs, nav-pills, and content panes. Add 10 tests using to_xml(). Reference: https://getbootstrap.com/docs/5.3/components/navs-tabs/"
+> "Build the Accordion component for FastStrap following BUILDING_COMPONENTS.md. Use Tabs.py as template for multi-part structure. Include collapsible panels with flush variant. Add 12 tests using to_xml(). Reference: https://getbootstrap.com/docs/5.3/components/accordion/"
 
 **Include:**
 - This guide
-- An existing component as reference
+- An existing similar component as reference
 - Bootstrap docs link
-- Specific test count
+- Specific test count (8-15 tests)
+
+**Phase 3 Reference Components:**
+- For simple components: `Spinner`, `Badge`
+- For form components: `Input`, `Select`
+- For multi-part components: `Tabs`, `Dropdown`
+- For navigation: `Breadcrumb`, `Pagination`
 
 ---
 
 ## 🤝 Getting Help
 
-- **Questions:** Open GitHub Discussion
-- **Bugs:** Open GitHub Issue
+- **Questions:** [GitHub Discussions](https://github.com/Evayoung/Faststrap/discussions)
+- **Bugs:** [GitHub Issues](https://github.com/Evayoung/Faststrap/issues)
 - **PRs:** We review within 48 hours
-- **Discord:** Join FastHTML community
+- **Discord:** [FastHTML Community](https://discord.gg/qcXvcxMhdP)
 
 ---
 
@@ -330,13 +356,13 @@ pytest tests/test_components/test_yourcomponent.py -v
 pytest --cov=faststrap.components.category.yourcomponent
 
 # 3. Type check
-mypy src/faststrap/components/category/yourcomponent.py
+mypy src/faststrap
 
 # 4. Format
-black src/faststrap/components/category/yourcomponent.py
-ruff check src/faststrap/components/category/yourcomponent.py
+black src/faststrap tests
+ruff check src/faststrap tests
 
-# 5. Test example
+# 5. Test demo
 python examples/demo_yourcomponent.py
 ```
 
@@ -344,4 +370,14 @@ All checks pass? Submit PR! 🎉
 
 ---
 
-**Ready to build? Pick a component from Phase 2 and start coding!**
+## 📊 Current Stats (v0.3.0)
+
+- ✅ **20 components** (12 from Phase 1+2, 8 new in Phase 3)
+- ✅ **219 tests** passing (80% coverage)
+- ✅ **Centralized convert_attrs()** for consistency
+- ✅ **Full HTMX integration** across all components
+- ✅ **Bootstrap 5.3.3** compliant
+
+---
+
+**Ready to build? Pick a component from Phase 4 and start coding!**
