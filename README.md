@@ -87,7 +87,7 @@ That's it! You now have a modern, responsive web app with zero JavaScript.
 | **Spinner** | Loading indicators (border/grow) | ✅ NEW |
 | **Progress** | Progress bars with animations | ✅ NEW |
 
-### 🚧 Phase 4 (v0.4.0 - Planned Q2 2025)
+### 🚧 Phase 4 (v0.4.0 - Planned Q2 2026)
 
 - **Table** - Responsive data tables
 - **Accordion** - Collapsible panels
@@ -309,6 +309,7 @@ faststrap/
 │   ├── templates/               # Component templates
 │   └── utils/
 │       ├── icons.py             # Bootstrap Icons
+│       ├── static_management.py # Assets extended helper functions
 │       └── attrs.py             # Centralized attribute conversion
 ├── tests/                       # 219 tests (80% coverage)
 ├── examples/                    # Demo applications

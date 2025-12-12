@@ -4,7 +4,7 @@
 
 ---
 
-## Current Status (v0.3.0 – Released Dec 13, 2024)
+## Current Status (v0.3.0 – Released Dec 12, 2025)
 
 **20 components live** – Phase 1 through 3 complete  
 **219 tests** – 80%+ coverage  
@@ -15,16 +15,16 @@
 
 | Phase | Components | Status       | Released     |
 |------|------------|--------------|--------------|
-| 1–2  | 12         | Complete     | Dec 2024     |
-| 3    | +8 (Tabs, Dropdown, Input, Select, Breadcrumb, Pagination, Spinner, Progress) | Complete | **Dec 13, 2024** |
+| 1–2  | 12         | Complete     | Dec 2025     |
+| 3    | +8 (Tabs, Dropdown, Input, Select, Breadcrumb, Pagination, Spinner, Progress) | Complete | **Dec 12, 2025** |
 
 **Total: 20 production-ready components**
 
 ---
 
-## Phase 4 – Now Open for Contributions (v0.4.0 – Target Q2 2025)
+## Phase 4 – Now Open for Contributions (v0.4.0 – Target Q2 2026)
 
-**Goal:** Reach **28–30 components** by mid-2025  
+**Goal:** Reach **28–30 components** by end of 1st quarter-2026  
 **Focus:** Most requested missing Bootstrap primitives
 
 ### High-Priority Components (Help Wanted!)
@@ -96,10 +96,10 @@ Fastest way to get your name in the next release!
 
 | Version | Target       | Components | Notes                              |
 |--------|--------------|------------|------------------------------------|
-| 0.3.0  | Dec 13, 2024 | 20         | Complete – Phase 3 shipped!         |
-| 0.4.0  | Apr–Jun 2025 | 28–32      | Phase 4 (Table, Accordion, etc.)   |
-| 0.5.0  | Sep–Oct 2025 | 45–50      | SaaS/dashboard patterns            |
-| 1.0.0  | Dec 2025     | 100+       | Stable, full docs, playground      |
+| 0.3.0  | Dec 12, 2025 | 20         | Complete – Phase 3 shipped!         |
+| 0.4.0  | Jan–Mar 2026 | 28–32      | Phase 4 (Table, Accordion, etc.)   |
+| 0.5.0  | Apr–Jun 2026 | 45–50      | SaaS/dashboard patterns            |
+| 1.0.0  | Aug 2026     | 100+       | Stable, full docs, playground      |
 
 Timelines flex based on community velocity — the more PRs, the faster we ship.
 
