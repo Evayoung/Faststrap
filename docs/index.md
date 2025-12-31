@@ -25,25 +25,31 @@ FastStrap aims to be the **standard component library for FastHTML**, providing 
 
 FastHTML is amazing for building web apps in pure Python, but building UI from scratch can be time-consuming. FastStrap bridges the gap by providing a comprehensive set of **production-ready Bootstrap 5 components** that just work.
 
-<div class="grid cards" markdown>
-
 -   :material-language-python: **Pure Python**
+
     ---
+
     No JavaScript, HTML, or CSS knowledge required. Define your UI with Python classes and intuitive keyword arguments.
 
 -   :material-flash: **FastHTML Native**
+
     ---
+
     Built specifically for FastHTML. Seamlessly integrates with HTMX for dynamic, SPA-like experiences without the complexity.
 
 -   :material-bootstrap: **Bootstrap 5.3**
+
     ---
+
     Leverages the world's most popular CSS framework. Responsive, accessible, and themeable out of the box.
 
 -   :material-eye: **Type Safe**
+
     ---
+
     Modern Python 3.10+ type hints for specific arguments. Great IDE support with auto-completion.
 
-</div>
+{ .grid .cards }
 
 ## At a Glance
 
