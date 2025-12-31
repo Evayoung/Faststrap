@@ -1,0 +1,3422 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Modern Bootstrap 5 components for FastHTML. Build beautiful web UIs in pure Python with zero JavaScript knowledge.">
+      
+      
+        <meta name="author" content="FastStrap Contributors">
+      
+      
+        <link rel="canonical" href="https://faststrap-org.github.io/Faststrap/components/forms/button/">
+      
+      
+        <link rel="prev" href="../../../getting-started/customization/">
+      
+      
+        <link rel="next" href="../input/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Button - FastStrap</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#button" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="FastStrap" class="md-header__button md-logo" aria-label="FastStrap" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FastStrap
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Button
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Faststrap-org/Faststrap" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Faststrap-org/Faststrap
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../getting-started/installation/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Components
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../showcase/portfolios/" class="md-tabs__link">
+          
+  
+  
+  Showcase
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../api/core/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="FastStrap" class="md-nav__button md-logo" aria-label="FastStrap" data-md-component="logo">
+      
+  <img src="../../../assets/logo.svg" alt="logo">
+
+    </a>
+    FastStrap
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Faststrap-org/Faststrap" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Faststrap-org/Faststrap
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Components
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forms
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Forms
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-examples-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Examples &amp; Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visual Examples &amp; Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-variants-colors-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Variants (Colors = Meaning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-outline-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Outline Styles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-full-width-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Full Width Buttons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Functionality
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-buttons-as-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Buttons as Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-adding-icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Adding Icons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-loading-states-great-for-htmx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Loading States (Great for HTMX)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Customization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-override-using-css-variables-the-pro-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Override using CSS Variables (The Pro Way)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-standard-css-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Standard CSS Classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-data-attributes-accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Attributes &amp; Accessibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common "Recipes"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common &#34;Recipes&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-submit-reset-toolbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "Submit &amp; Reset" Toolbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-destructive-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "Destructive Action"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameter Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#faststrap.components.forms.button.Button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Button
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checkbox & Switch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FileInput
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Display
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Display
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../display/card/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../display/table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../display/figure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Figure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../display/badge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Badge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../display/empty_state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Empty State
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../display/stat_card/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stat Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feedback
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Feedback
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feedback/alert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feedback/modal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feedback/toast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Toast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feedback/overlays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tooltip & Popover
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Navigation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../navigation/navbar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navbar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../navigation/tabs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tabs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layout
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Layout
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../layout/grid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../layout/hero/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Showcase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Showcase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../showcase/portfolios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portfolios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../showcase/saas-landing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SaaS Landing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../showcase/admin-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-examples-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Examples &amp; Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visual Examples &amp; Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-variants-colors-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Variants (Colors = Meaning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-outline-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Outline Styles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-full-width-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Full Width Buttons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Functionality
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Functionality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-buttons-as-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Buttons as Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-adding-icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Adding Icons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-loading-states-great-for-htmx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Loading States (Great for HTMX)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Customization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-override-using-css-variables-the-pro-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Override using CSS Variables (The Pro Way)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-standard-css-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Standard CSS Classes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-data-attributes-accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Attributes &amp; Accessibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common "Recipes"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common &#34;Recipes&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-submit-reset-toolbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "Submit &amp; Reset" Toolbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-destructive-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "Destructive Action"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameter Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#faststrap.components.forms.button.Button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Button
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="button">Button</h1>
+<p>The <code>Button</code> component is one of the most fundamental components in web development. In FastStrap, the <code>Button</code> component wraps the standard HTML <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code> element, adding beautiful Bootstrap styling, automatic loading states, and icon support—all in pure Python.</p>
+<div class="admonition success">
+<p class="admonition-title">Goal</p>
+<p>By the end of this guide, you will be able to create buttons for forms, navigation, and interactive actions, and customize them to fit your exact design needs, <strong>even if you've never used Bootstrap before.</strong></p>
+</div>
+<hr />
+<h2 id="quick-start">Quick Start</h2>
+<p>Here is the simplest way to create a button.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">faststrap</span><span class="w"> </span><span class="kn">import</span> <span class="n">Button</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># A standard primary action button</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Click Me&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="result" markdown>
+![Screenshot: Basic Primary Button - A blue button saying 'Click Me'](../../assets/images/button-basic.png){ width=200 }
+</div>
+
+<hr />
+<h2 id="visual-examples-use-cases">Visual Examples &amp; Use Cases</h2>
+<h3 id="1-variants-colors-meaning">1. Variants (Colors = Meaning)</h3>
+<p>In Bootstrap (and FastStrap), colors carry <em>semantic meaning</em>. You don't just pick "blue"; you pick "Primary" (for the main action).</p>
+<div class="admonition note">
+<p class="admonition-title">Code &amp; Output</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Primary&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Secondary&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;secondary&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Success&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;success&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Danger&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;danger&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Warning&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;warning&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Info&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Light&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;light&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Dark&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;link&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><div class="result" markdown>
+<img alt="Screenshot: Row of solid buttons in all colors: Blue (Primary), Gray (Secondary), Green (Success), Red (Danger), Yellow (Warning), Cyan (Info), White (Light), Black (Dark), Standard Link (Link)" src="../../assets/images/buttons-solid.png" />
+</div></p>
+</div>
+<p><strong>Understanding Semantic Colors:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variant</th>
+<th style="text-align: left;">Meaning</th>
+<th style="text-align: left;">Typical Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>primary</code></td>
+<td style="text-align: left;"><strong>Main Action</strong></td>
+<td style="text-align: left;">Submit, Save, Login, Sign Up</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>secondary</code></td>
+<td style="text-align: left;"><strong>Secondary</strong></td>
+<td style="text-align: left;">Cancel, Back, More Info</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>success</code></td>
+<td style="text-align: left;"><strong>Positive</strong></td>
+<td style="text-align: left;">Confirm, Complete, Uploaded</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>danger</code></td>
+<td style="text-align: left;"><strong>Negative</strong></td>
+<td style="text-align: left;">Delete, Remove, Stop</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>warning</code></td>
+<td style="text-align: left;"><strong>Caution</strong></td>
+<td style="text-align: left;">Pause, Archive, Reset</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>info</code></td>
+<td style="text-align: left;"><strong>Information</strong></td>
+<td style="text-align: left;">Help, About, Status</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>light</code></td>
+<td style="text-align: left;"><strong>Light</strong></td>
+<td style="text-align: left;">Backgrounds, App Bars</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>dark</code></td>
+<td style="text-align: left;"><strong>Dark</strong></td>
+<td style="text-align: left;">Footer actions, Inverse styling</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>link</code></td>
+<td style="text-align: left;"><strong>Link</strong></td>
+<td style="text-align: left;">Look like a text link but act like a button</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-outline-styles">2. Outline Styles</h3>
+<p>Sometimes a solid color is too "heavy" for a UI. Use <code>outline=True</code> for a lighter look with a transparent background and colored border.</p>
+<div class="admonition note">
+<p class="admonition-title">Code &amp; Output</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># A less aggressive &#39;Delete&#39; button</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Delete&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;danger&quot;</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Save Draft&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<p><div class="result" markdown>
+<img alt="Screenshot: Outline Buttons - Primary Outline (Blue border), Danger Outline (Red border)" src="../../assets/images/buttons-outline.png" />
+</div></p>
+</div>
+<h3 id="3-sizes">3. Sizes</h3>
+<p>Hierarchy matters. Make your most important buttons larger and secondary actions smaller.</p>
+<div class="admonition note">
+<p class="admonition-title">Code &amp; Output</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Join Now!&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;lg&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span><span class="p">)</span> <span class="c1"># Large Call-to-Action</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Default&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;secondary&quot;</span><span class="p">)</span>            <span class="c1"># Default Size</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Details&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;sm&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">)</span>      <span class="c1"># Small table action</span>
+</code></pre></div>
+<p><div class="result" markdown>
+<img alt="Screenshot: Button Sizes - Large 'Join Now', Default 'Default', Small 'Details'" src="../../assets/images/buttons-sizes.png" />
+</div></p>
+</div>
+<h3 id="4-full-width-buttons">4. Full Width Buttons</h3>
+<p>On mobile devices or in cards, you often want a button to stretch the full width of its container. Use <code>full_width=True</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Code &amp; Output</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">faststrap</span><span class="w"> </span><span class="kn">import</span> <span class="n">Card</span><span class="p">,</span> <span class="n">Input</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># A Login Card example</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">Card</span><span class="p">(</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">Input</span><span class="p">(</span><span class="n">placeholder</span><span class="o">=</span><span class="s2">&quot;Email&quot;</span><span class="p">),</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Sign In&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span><span class="p">,</span> <span class="n">full_width</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="c1"># Stretches 100%</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;max-width&quot;</span><span class="p">:</span> <span class="s2">&quot;300px&quot;</span><span class="p">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">)</span>
+</code></pre></div>
+<p><div class="result" markdown>
+<img alt="Screenshot: Full Width Button inside a Card" src="../assets/images/button-full-width.png" width="300" />
+</div></p>
+</div>
+<hr />
+<h2 id="practical-functionality">Practical Functionality</h2>
+<h3 id="1-buttons-as-links">1. Buttons as Links</h3>
+<p>Sometimes you need a button that <em>looks</em> like a button but <em>acts</em> like a link (taking you to a new page without HTMX). Use the <code>as_</code> argument.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Renders as an &lt;a href=&quot;/login&quot; class=&quot;btn btn-primary&quot;&gt; tag</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Go to Login&quot;</span><span class="p">,</span> <span class="n">as_</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;/login&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="2-adding-icons">2. Adding Icons</h3>
+<p>Visual cues help users respond faster. FastStrap makes adding icons easy (using <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>).</p>
+<div class="admonition note">
+<p class="admonition-title">Code &amp; Output</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Icon at the START (default)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Save&quot;</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;check-circle&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;success&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Icon at the END</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Next Step&quot;</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;arrow-right&quot;</span><span class="p">,</span> <span class="n">icon_pos</span><span class="o">=</span><span class="s2">&quot;end&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><div class="result" markdown>
+<img alt="Screenshot: Buttons with icons - 'Save' has checkmark on left, 'Next Step' has arrow on right" src="../../assets/images/buttons-icons.png" />
+</div></p>
+</div>
+<h3 id="3-loading-states-great-for-htmx">3. Loading States (Great for HTMX)</h3>
+<p>If you are using HTMX, you want to tell the user something is happening so they don't click twice. FastStrap buttons can handle this states automatically.</p>
+<div class="admonition note">
+<p class="admonition-title">Code &amp; Output</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 1. Shows &quot;Saving...&quot; text</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># 2. Shows a spinner</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># 3. Disables the button to prevent double-clicks</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">Button</span><span class="p">(</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="s2">&quot;Save Profile&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">hx_post</span><span class="o">=</span><span class="s2">&quot;/profile/save&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">loading_text</span><span class="o">=</span><span class="s2">&quot;Saving...&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="bp">cls</span><span class="o">=</span><span class="s2">&quot;btn-loading&quot;</span> <span class="c1"># Helper class to trigger JS if needed</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">)</span>
+</code></pre></div>
+<p><div class="result" markdown>
+<img alt="Video: Button click transition to loading spinner and disabled state" src="../../assets/videos/button-loading-demo.gif" />
+</div></p>
+</div>
+<hr />
+<h2 id="advanced-customization">Advanced Customization</h2>
+<h3 id="1-override-using-css-variables-the-pro-way">1. Override using CSS Variables (The Pro Way)</h3>
+<p>Bootstrap 5 is built on CSS Variables. This is the <strong>best way</strong> to customize a specific button (like making a "Purple" brand button) without fighting the framework's CSS rules.</p>
+<p>The following variables are available on every button:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">CSS Variable</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Example Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>--bs-btn-bg</code></td>
+<td style="text-align: left;">Background color of the button.</td>
+<td style="text-align: left;"><code>#6f42c1</code> (Purple)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--bs-btn-color</code></td>
+<td style="text-align: left;">Text color of the button.</td>
+<td style="text-align: left;"><code>#ffffff</code> (White)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--bs-btn-border-color</code></td>
+<td style="text-align: left;">Border color. Usually same as bg.</td>
+<td style="text-align: left;"><code>#6f42c1</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--bs-btn-hover-bg</code></td>
+<td style="text-align: left;">Background color when hovered.</td>
+<td style="text-align: left;"><code>#59359a</code> (Darker Purple)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--bs-btn-hover-color</code></td>
+<td style="text-align: left;">Text color when hovered.</td>
+<td style="text-align: left;"><code>#ffffff</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--bs-btn-hover-border-color</code></td>
+<td style="text-align: left;">Border color when hovered.</td>
+<td style="text-align: left;"><code>#59359a</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--bs-btn-border-radius</code></td>
+<td style="text-align: left;">Corner roundness.</td>
+<td style="text-align: left;"><code>2rem</code> (Pill), <code>0</code> (Square)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--bs-btn-padding-y</code></td>
+<td style="text-align: left;">Vertical padding (height).</td>
+<td style="text-align: left;"><code>1rem</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--bs-btn-padding-x</code></td>
+<td style="text-align: left;">Horizontal padding (width).</td>
+<td style="text-align: left;"><code>2rem</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--bs-btn-font-size</code></td>
+<td style="text-align: left;">Text size.</td>
+<td style="text-align: left;"><code>1.25rem</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example: Creating a Custom Purple Button</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Create a dictionary of the variables you want to override</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">purple_btn_theme</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="s2">&quot;--bs-btn-bg&quot;</span><span class="p">:</span> <span class="s2">&quot;#6f42c1&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="s2">&quot;--bs-btn-border-color&quot;</span><span class="p">:</span> <span class="s2">&quot;#6f42c1&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="s2">&quot;--bs-btn-hover-bg&quot;</span><span class="p">:</span> <span class="s2">&quot;#59359a&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="s2">&quot;--bs-btn-hover-border-color&quot;</span><span class="p">:</span> <span class="s2">&quot;#59359a&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="s2">&quot;--bs-btn-color&quot;</span><span class="p">:</span> <span class="s2">&quot;#fff&quot;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">}</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1"># Pass it to the css_vars argument</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Purple Button&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span><span class="p">,</span> <span class="n">css_vars</span><span class="o">=</span><span class="n">purple_btn_theme</span><span class="p">)</span>
+</code></pre></div>
+<div class="result" markdown>
+![Screenshot: A custom purple button styled via CSS variables](../../assets/images/button-purple.png)
+</div>
+
+<h3 id="2-standard-css-classes">2. Standard CSS Classes</h3>
+<p>You can pass standard Bootstrap utility classes (or your own classes) using <code>cls</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># &#39;rounded-pill&#39;: Fully rounded corners</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># &#39;shadow-lg&#39;: Large drop shadow</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># &#39;text-uppercase&#39;: ALL CAPS TEXT</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Custom Style&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="s2">&quot;rounded-pill shadow-lg text-uppercase&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="3-data-attributes-accessibility">3. Data Attributes &amp; Accessibility</h3>
+<p>You can pass any standard HTML attribute. FastStrap cleans them up for you (converting python <code>underscore_names</code> to HTML <code>hyphen-names</code>).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">Button</span><span class="p">(</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="s2">&quot;Menu&quot;</span><span class="p">,</span> 
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="c1"># Data attributes (Python converts underscores to hyphens)</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">data_bs_toggle</span><span class="o">=</span><span class="s2">&quot;dropdown&quot;</span><span class="p">,</span> 
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">data_custom_id</span><span class="o">=</span><span class="s2">&quot;123&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="c1"># ARIA attributes for accessibility</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="n">aria_label</span><span class="o">=</span><span class="s2">&quot;Open main menu&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="n">aria_expanded</span><span class="o">=</span><span class="s2">&quot;false&quot;</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="p">)</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c1"># Renders: &lt;button data-bs-toggle=&quot;dropdown&quot; data-custom-id=&quot;123&quot; aria-label=&quot;...&quot; ...&gt;</span>
+</code></pre></div>
+<hr />
+<h2 id="common-recipes">Common "Recipes"</h2>
+<h3 id="the-submit-reset-toolbar">The "Submit &amp; Reset" Toolbar</h3>
+<p>A common pattern for forms, aligning buttons to the right or left.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">faststrap</span><span class="w"> </span><span class="kn">import</span> <span class="n">Div</span><span class="p">,</span> <span class="n">Button</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">FormActions</span><span class="p">():</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="k">return</span> <span class="n">Div</span><span class="p">(</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        <span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Submit&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span><span class="p">),</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        <span class="n">Button</span><span class="p">(</span><span class="s2">&quot;Reset&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;reset&quot;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;link&quot;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="s2">&quot;text-decoration-none text-muted&quot;</span><span class="p">),</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        <span class="bp">cls</span><span class="o">=</span><span class="s2">&quot;d-flex align-items-center gap-2&quot;</span> <span class="c1"># d-flex (flexbox), gap-2 (spacing)</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="p">)</span>
+</code></pre></div>
+<h3 id="the-destructive-action">The "Destructive Action"</h3>
+<p>For actions that can't be undone, use <code>outline-danger</code> to warn the user but not catch the eye <em>too</em> much (to avoid accidental clicks), but switch to solid danger for the confirmation.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">Button</span><span class="p">(</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="s2">&quot;Delete Account&quot;</span><span class="p">,</span> 
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;outline-danger&quot;</span><span class="p">,</span> <span class="c1"># Subtle warning</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;trash&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="n">data_bs_toggle</span><span class="o">=</span><span class="s2">&quot;modal&quot;</span><span class="p">,</span> 
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="n">data_bs_target</span><span class="o">=</span><span class="s2">&quot;#confirm-delete-modal&quot;</span> <span class="c1"># Triggers a modal</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="parameter-reference">Parameter Reference</h2>
+<p>This table maps every FastStrap specific parameter to what it actually does in HTML/Bootstrap.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">FastStrap Param</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Bootstrap Class / Attribute</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>variant</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>.btn-{variant}</code></td>
+<td style="text-align: left;">Color theme. Options: <code>primary</code>, <code>secondary</code>, <code>success</code>, <code>danger</code>, <code>warning</code>, <code>info</code>, <code>light</code>, <code>dark</code>, <code>link</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>outline</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>.btn-outline-{variant}</code></td>
+<td style="text-align: left;">If <code>True</code>, renders outline style instead of solid fill.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>size</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>.btn-{size}</code></td>
+<td style="text-align: left;">Size of button. Options: <code>sm</code> (Small), <code>lg</code> (Large). Default is Medium.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>full_width</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>.w-100</code></td>
+<td style="text-align: left;">Makes button span full width of parent.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pill</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>.rounded-pill</code></td>
+<td style="text-align: left;">Gives button fully rounded corners.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>as_</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>&lt;tag&gt;</code></td>
+<td style="text-align: left;">Tag to render. Default <code>button</code>. Use <code>a</code> for links.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>href</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>href="..."</code></td>
+<td style="text-align: left;">URL destination (requires <code>as_="a"</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>disabled</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>disabled</code> / <code>.disabled</code></td>
+<td style="text-align: left;">Disables interactivity and applies disabled styling.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>active</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>.active</code></td>
+<td style="text-align: left;">Forces the button to appear in a "pressed" state.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>icon</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;"><code>&lt;i class="bi bi-{icon}"&gt;</code></td>
+<td style="text-align: left;">Adds a Bootstrap Icon (e.g., "check", "house").</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>icon_pos</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Position of icon: <code>start</code> (default) or <code>end</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>spinner</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"><code>.spinner-border</code></td>
+<td style="text-align: left;">Adds a loading spinner.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>loading</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Helper that enables <code>spinner</code> and <code>disabled</code> state together.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>loading_text</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Text to display when <code>loading=True</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>css_vars</code></td>
+<td style="text-align: left;"><code>dict</code></td>
+<td style="text-align: left;"><code>style="--var: val"</code></td>
+<td style="text-align: left;">Dict of CSS variables to apply inline.</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="faststrap.components.forms.button.Button" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">faststrap</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">forms</span><span class="o">.</span><span class="n">button</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="o">*</span><span class="n">children</span><span class="p">,</span> <span class="n">as_</span><span class="o">=</span><span class="s1">&#39;button&#39;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">loading</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">spinner</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">loading_text</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">icon_pos</span><span class="o">=</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="n">icon_cls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spinner_pos</span><span class="o">=</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="n">spinner_cls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">full_width</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">active</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">css_vars</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Bootstrap Button component.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>*children</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Button content (text, elements)</p>
+              </div>
+            </td>
+            <td>
+                  <code>()</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>as_</code>
+            </td>
+            <td>
+                  <code><span title="typing.Literal">Literal</span>[&#39;button&#39;, &#39;a&#39;]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Render as 'button' or 'a' tag (default: 'button')</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;button&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>variant</code>
+            </td>
+            <td>
+                  <code><span title="faststrap.core.types.VariantType">VariantType</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Bootstrap color variant</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>size</code>
+            </td>
+            <td>
+                  <code><span title="faststrap.core.types.SizeType">SizeType</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Button size (sm, lg)</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>outline</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Use outline style</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>disabled</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Disable button</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>loading</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Show loading spinner and disable</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>spinner</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Show spinner when loading</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>loading_text</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Text to show when loading</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>icon</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Bootstrap icon name</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>icon_pos</code>
+            </td>
+            <td>
+                  <code><span title="typing.Literal">Literal</span>[&#39;start&#39;, &#39;end&#39;]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Icon position ('start' or 'end')</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;start&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>icon_cls</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Custom classes for icon</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>spinner_pos</code>
+            </td>
+            <td>
+                  <code><span title="typing.Literal">Literal</span>[&#39;start&#39;, &#39;end&#39;]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Spinner position ('start' or 'end')</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;start&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>spinner_cls</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Custom classes for spinner</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>full_width</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Make button 100% width. Note: Can also be achieved via <code>cls='w-100'</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>active</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Set active state. Note: Can also be achieved via <code>cls='active'</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>pill</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Use rounded-pill style. Note: Can also be achieved via <code>cls='rounded-pill'</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>css_vars</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span>[<span title="str">str</span>, <span title="typing.Any">Any</span>] | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Custom CSS variables dictionary</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>style</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span>[<span title="str">str</span>, <span title="typing.Any">Any</span>] | <span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Custom inline style</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>**kwargs</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Additional HTML attributes (cls, id, hx-<em>, data-</em>, etc.)</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="mkdocstrings-source">
+              <summary>Source code in <code>src/faststrap/components/forms/button.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-46"> 46</a></span>
+<span class="normal"><a href="#__codelineno-0-47"> 47</a></span>
+<span class="normal"><a href="#__codelineno-0-48"> 48</a></span>
+<span class="normal"><a href="#__codelineno-0-49"> 49</a></span>
+<span class="normal"><a href="#__codelineno-0-50"> 50</a></span>
+<span class="normal"><a href="#__codelineno-0-51"> 51</a></span>
+<span class="normal"><a href="#__codelineno-0-52"> 52</a></span>
+<span class="normal"><a href="#__codelineno-0-53"> 53</a></span>
+<span class="normal"><a href="#__codelineno-0-54"> 54</a></span>
+<span class="normal"><a href="#__codelineno-0-55"> 55</a></span>
+<span class="normal"><a href="#__codelineno-0-56"> 56</a></span>
+<span class="normal"><a href="#__codelineno-0-57"> 57</a></span>
+<span class="normal"><a href="#__codelineno-0-58"> 58</a></span>
+<span class="normal"><a href="#__codelineno-0-59"> 59</a></span>
+<span class="normal"><a href="#__codelineno-0-60"> 60</a></span>
+<span class="normal"><a href="#__codelineno-0-61"> 61</a></span>
+<span class="normal"><a href="#__codelineno-0-62"> 62</a></span>
+<span class="normal"><a href="#__codelineno-0-63"> 63</a></span>
+<span class="normal"><a href="#__codelineno-0-64"> 64</a></span>
+<span class="normal"><a href="#__codelineno-0-65"> 65</a></span>
+<span class="normal"><a href="#__codelineno-0-66"> 66</a></span>
+<span class="normal"><a href="#__codelineno-0-67"> 67</a></span>
+<span class="normal"><a href="#__codelineno-0-68"> 68</a></span>
+<span class="normal"><a href="#__codelineno-0-69"> 69</a></span>
+<span class="normal"><a href="#__codelineno-0-70"> 70</a></span>
+<span class="normal"><a href="#__codelineno-0-71"> 71</a></span>
+<span class="normal"><a href="#__codelineno-0-72"> 72</a></span>
+<span class="normal"><a href="#__codelineno-0-73"> 73</a></span>
+<span class="normal"><a href="#__codelineno-0-74"> 74</a></span>
+<span class="normal"><a href="#__codelineno-0-75"> 75</a></span>
+<span class="normal"><a href="#__codelineno-0-76"> 76</a></span>
+<span class="normal"><a href="#__codelineno-0-77"> 77</a></span>
+<span class="normal"><a href="#__codelineno-0-78"> 78</a></span>
+<span class="normal"><a href="#__codelineno-0-79"> 79</a></span>
+<span class="normal"><a href="#__codelineno-0-80"> 80</a></span>
+<span class="normal"><a href="#__codelineno-0-81"> 81</a></span>
+<span class="normal"><a href="#__codelineno-0-82"> 82</a></span>
+<span class="normal"><a href="#__codelineno-0-83"> 83</a></span>
+<span class="normal"><a href="#__codelineno-0-84"> 84</a></span>
+<span class="normal"><a href="#__codelineno-0-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-0-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-0-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-0-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-0-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-0-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-0-100">100</a></span>
+<span class="normal"><a href="#__codelineno-0-101">101</a></span>
+<span class="normal"><a href="#__codelineno-0-102">102</a></span>
+<span class="normal"><a href="#__codelineno-0-103">103</a></span>
+<span class="normal"><a href="#__codelineno-0-104">104</a></span>
+<span class="normal"><a href="#__codelineno-0-105">105</a></span>
+<span class="normal"><a href="#__codelineno-0-106">106</a></span>
+<span class="normal"><a href="#__codelineno-0-107">107</a></span>
+<span class="normal"><a href="#__codelineno-0-108">108</a></span>
+<span class="normal"><a href="#__codelineno-0-109">109</a></span>
+<span class="normal"><a href="#__codelineno-0-110">110</a></span>
+<span class="normal"><a href="#__codelineno-0-111">111</a></span>
+<span class="normal"><a href="#__codelineno-0-112">112</a></span>
+<span class="normal"><a href="#__codelineno-0-113">113</a></span>
+<span class="normal"><a href="#__codelineno-0-114">114</a></span>
+<span class="normal"><a href="#__codelineno-0-115">115</a></span>
+<span class="normal"><a href="#__codelineno-0-116">116</a></span>
+<span class="normal"><a href="#__codelineno-0-117">117</a></span>
+<span class="normal"><a href="#__codelineno-0-118">118</a></span>
+<span class="normal"><a href="#__codelineno-0-119">119</a></span>
+<span class="normal"><a href="#__codelineno-0-120">120</a></span>
+<span class="normal"><a href="#__codelineno-0-121">121</a></span>
+<span class="normal"><a href="#__codelineno-0-122">122</a></span>
+<span class="normal"><a href="#__codelineno-0-123">123</a></span>
+<span class="normal"><a href="#__codelineno-0-124">124</a></span>
+<span class="normal"><a href="#__codelineno-0-125">125</a></span>
+<span class="normal"><a href="#__codelineno-0-126">126</a></span>
+<span class="normal"><a href="#__codelineno-0-127">127</a></span>
+<span class="normal"><a href="#__codelineno-0-128">128</a></span>
+<span class="normal"><a href="#__codelineno-0-129">129</a></span>
+<span class="normal"><a href="#__codelineno-0-130">130</a></span>
+<span class="normal"><a href="#__codelineno-0-131">131</a></span>
+<span class="normal"><a href="#__codelineno-0-132">132</a></span>
+<span class="normal"><a href="#__codelineno-0-133">133</a></span>
+<span class="normal"><a href="#__codelineno-0-134">134</a></span>
+<span class="normal"><a href="#__codelineno-0-135">135</a></span>
+<span class="normal"><a href="#__codelineno-0-136">136</a></span>
+<span class="normal"><a href="#__codelineno-0-137">137</a></span>
+<span class="normal"><a href="#__codelineno-0-138">138</a></span>
+<span class="normal"><a href="#__codelineno-0-139">139</a></span>
+<span class="normal"><a href="#__codelineno-0-140">140</a></span>
+<span class="normal"><a href="#__codelineno-0-141">141</a></span>
+<span class="normal"><a href="#__codelineno-0-142">142</a></span>
+<span class="normal"><a href="#__codelineno-0-143">143</a></span>
+<span class="normal"><a href="#__codelineno-0-144">144</a></span>
+<span class="normal"><a href="#__codelineno-0-145">145</a></span>
+<span class="normal"><a href="#__codelineno-0-146">146</a></span>
+<span class="normal"><a href="#__codelineno-0-147">147</a></span>
+<span class="normal"><a href="#__codelineno-0-148">148</a></span>
+<span class="normal"><a href="#__codelineno-0-149">149</a></span>
+<span class="normal"><a href="#__codelineno-0-150">150</a></span>
+<span class="normal"><a href="#__codelineno-0-151">151</a></span>
+<span class="normal"><a href="#__codelineno-0-152">152</a></span>
+<span class="normal"><a href="#__codelineno-0-153">153</a></span>
+<span class="normal"><a href="#__codelineno-0-154">154</a></span>
+<span class="normal"><a href="#__codelineno-0-155">155</a></span>
+<span class="normal"><a href="#__codelineno-0-156">156</a></span>
+<span class="normal"><a href="#__codelineno-0-157">157</a></span>
+<span class="normal"><a href="#__codelineno-0-158">158</a></span>
+<span class="normal"><a href="#__codelineno-0-159">159</a></span>
+<span class="normal"><a href="#__codelineno-0-160">160</a></span>
+<span class="normal"><a href="#__codelineno-0-161">161</a></span>
+<span class="normal"><a href="#__codelineno-0-162">162</a></span>
+<span class="normal"><a href="#__codelineno-0-163">163</a></span>
+<span class="normal"><a href="#__codelineno-0-164">164</a></span>
+<span class="normal"><a href="#__codelineno-0-165">165</a></span>
+<span class="normal"><a href="#__codelineno-0-166">166</a></span>
+<span class="normal"><a href="#__codelineno-0-167">167</a></span>
+<span class="normal"><a href="#__codelineno-0-168">168</a></span>
+<span class="normal"><a href="#__codelineno-0-169">169</a></span>
+<span class="normal"><a href="#__codelineno-0-170">170</a></span>
+<span class="normal"><a href="#__codelineno-0-171">171</a></span>
+<span class="normal"><a href="#__codelineno-0-172">172</a></span>
+<span class="normal"><a href="#__codelineno-0-173">173</a></span>
+<span class="normal"><a href="#__codelineno-0-174">174</a></span>
+<span class="normal"><a href="#__codelineno-0-175">175</a></span>
+<span class="normal"><a href="#__codelineno-0-176">176</a></span>
+<span class="normal"><a href="#__codelineno-0-177">177</a></span>
+<span class="normal"><a href="#__codelineno-0-178">178</a></span>
+<span class="normal"><a href="#__codelineno-0-179">179</a></span>
+<span class="normal"><a href="#__codelineno-0-180">180</a></span>
+<span class="normal"><a href="#__codelineno-0-181">181</a></span>
+<span class="normal"><a href="#__codelineno-0-182">182</a></span>
+<span class="normal"><a href="#__codelineno-0-183">183</a></span>
+<span class="normal"><a href="#__codelineno-0-184">184</a></span>
+<span class="normal"><a href="#__codelineno-0-185">185</a></span>
+<span class="normal"><a href="#__codelineno-0-186">186</a></span>
+<span class="normal"><a href="#__codelineno-0-187">187</a></span>
+<span class="normal"><a href="#__codelineno-0-188">188</a></span>
+<span class="normal"><a href="#__codelineno-0-189">189</a></span>
+<span class="normal"><a href="#__codelineno-0-190">190</a></span>
+<span class="normal"><a href="#__codelineno-0-191">191</a></span>
+<span class="normal"><a href="#__codelineno-0-192">192</a></span>
+<span class="normal"><a href="#__codelineno-0-193">193</a></span>
+<span class="normal"><a href="#__codelineno-0-194">194</a></span>
+<span class="normal"><a href="#__codelineno-0-195">195</a></span>
+<span class="normal"><a href="#__codelineno-0-196">196</a></span>
+<span class="normal"><a href="#__codelineno-0-197">197</a></span>
+<span class="normal"><a href="#__codelineno-0-198">198</a></span>
+<span class="normal"><a href="#__codelineno-0-199">199</a></span>
+<span class="normal"><a href="#__codelineno-0-200">200</a></span>
+<span class="normal"><a href="#__codelineno-0-201">201</a></span>
+<span class="normal"><a href="#__codelineno-0-202">202</a></span>
+<span class="normal"><a href="#__codelineno-0-203">203</a></span>
+<span class="normal"><a href="#__codelineno-0-204">204</a></span>
+<span class="normal"><a href="#__codelineno-0-205">205</a></span>
+<span class="normal"><a href="#__codelineno-0-206">206</a></span>
+<span class="normal"><a href="#__codelineno-0-207">207</a></span>
+<span class="normal"><a href="#__codelineno-0-208">208</a></span>
+<span class="normal"><a href="#__codelineno-0-209">209</a></span>
+<span class="normal"><a href="#__codelineno-0-210">210</a></span>
+<span class="normal"><a href="#__codelineno-0-211">211</a></span>
+<span class="normal"><a href="#__codelineno-0-212">212</a></span>
+<span class="normal"><a href="#__codelineno-0-213">213</a></span>
+<span class="normal"><a href="#__codelineno-0-214">214</a></span>
+<span class="normal"><a href="#__codelineno-0-215">215</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="k">def</span><span class="w"> </span><span class="nf">Button</span><span class="p">(</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47"></a>    <span class="o">*</span><span class="n">children</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="n">as_</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;button&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;button&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="n">variant</span><span class="p">:</span> <span class="n">VariantType</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="n">size</span><span class="p">:</span> <span class="n">SizeType</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="n">outline</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52"></a>    <span class="n">disabled</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53"></a>    <span class="n">loading</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54"></a>    <span class="n">spinner</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a>    <span class="n">loading_text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a>    <span class="n">icon</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>    <span class="n">icon_pos</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;start&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a>    <span class="n">icon_cls</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a>    <span class="n">spinner_pos</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;start&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a>    <span class="n">spinner_cls</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a>    <span class="n">full_width</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a>    <span class="n">active</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a>    <span class="n">pill</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="n">css_vars</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="n">style</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FTButton</span> <span class="o">|</span> <span class="n">A</span><span class="p">:</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Bootstrap Button component.</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="sd">    Args:</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="sd">        *children: Button content (text, elements)</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="sd">        as_: Render as &#39;button&#39; or &#39;a&#39; tag (default: &#39;button&#39;)</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="sd">        variant: Bootstrap color variant</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="sd">        size: Button size (sm, lg)</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="sd">        outline: Use outline style</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="sd">        disabled: Disable button</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="sd">        loading: Show loading spinner and disable</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="sd">        spinner: Show spinner when loading</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="sd">        loading_text: Text to show when loading</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="sd">        icon: Bootstrap icon name</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="sd">        icon_pos: Icon position (&#39;start&#39; or &#39;end&#39;)</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="sd">        icon_cls: Custom classes for icon</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="sd">        spinner_pos: Spinner position (&#39;start&#39; or &#39;end&#39;)</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="sd">        spinner_cls: Custom classes for spinner</span>
+<a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="sd">        full_width: Make button 100% width. Note: Can also be achieved via `cls=&#39;w-100&#39;`.</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="sd">        active: Set active state. Note: Can also be achieved via `cls=&#39;active&#39;`.</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="sd">        pill: Use rounded-pill style. Note: Can also be achieved via `cls=&#39;rounded-pill&#39;`.</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="sd">        css_vars: Custom CSS variables dictionary</span>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="sd">        style: Custom inline style</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a><span class="sd">        **kwargs: Additional HTML attributes (cls, id, hx-*, data-*, etc.)</span>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="c1"># Resolve API defaults</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a>    <span class="c1"># This automatically picks up global defaults for &#39;variant&#39;, &#39;size&#39;, etc. if the user didn&#39;t pass them</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a>    <span class="n">cfg</span> <span class="o">=</span> <span class="n">resolve_defaults</span><span class="p">(</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a>        <span class="s2">&quot;Button&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a>        <span class="n">variant</span><span class="o">=</span><span class="n">variant</span><span class="p">,</span>
+<a id="__codelineno-0-98" name="__codelineno-0-98"></a>        <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span>
+<a id="__codelineno-0-99" name="__codelineno-0-99"></a>        <span class="n">outline</span><span class="o">=</span><span class="n">outline</span><span class="p">,</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a>        <span class="n">disabled</span><span class="o">=</span><span class="n">disabled</span><span class="p">,</span>
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a>        <span class="n">full_width</span><span class="o">=</span><span class="n">full_width</span><span class="p">,</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a>        <span class="n">pill</span><span class="o">=</span><span class="n">pill</span><span class="p">,</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a>        <span class="n">active</span><span class="o">=</span><span class="n">active</span><span class="p">,</span>
+<a id="__codelineno-0-104" name="__codelineno-0-104"></a>    <span class="p">)</span>
+<a id="__codelineno-0-105" name="__codelineno-0-105"></a>
+<a id="__codelineno-0-106" name="__codelineno-0-106"></a>    <span class="c1"># Extract resolved values</span>
+<a id="__codelineno-0-107" name="__codelineno-0-107"></a>    <span class="n">c_variant</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;variant&quot;</span><span class="p">,</span> <span class="s2">&quot;primary&quot;</span><span class="p">)</span>  <span class="c1"># Hardest fallback</span>
+<a id="__codelineno-0-108" name="__codelineno-0-108"></a>    <span class="n">c_size</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;size&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-109" name="__codelineno-0-109"></a>    <span class="n">c_outline</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;outline&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-0-110" name="__codelineno-0-110"></a>    <span class="n">c_full_width</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;full_width&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-0-111" name="__codelineno-0-111"></a>    <span class="n">c_pill</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pill&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-0-112" name="__codelineno-0-112"></a>    <span class="n">c_active</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;active&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-0-113" name="__codelineno-0-113"></a>    <span class="n">c_disabled</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-0-114" name="__codelineno-0-114"></a>
+<a id="__codelineno-0-115" name="__codelineno-0-115"></a>    <span class="c1"># Build base classes</span>
+<a id="__codelineno-0-116" name="__codelineno-0-116"></a>    <span class="k">if</span> <span class="n">c_outline</span> <span class="ow">and</span> <span class="n">c_variant</span> <span class="o">!=</span> <span class="s2">&quot;link&quot;</span><span class="p">:</span>  <span class="c1"># &quot;link&quot; doesn&#39;t have outline variant</span>
+<a id="__codelineno-0-117" name="__codelineno-0-117"></a>        <span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;btn-outline-</span><span class="si">{</span><span class="n">c_variant</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-118" name="__codelineno-0-118"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-119" name="__codelineno-0-119"></a>        <span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;btn-</span><span class="si">{</span><span class="n">c_variant</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-120" name="__codelineno-0-120"></a>
+<a id="__codelineno-0-121" name="__codelineno-0-121"></a>    <span class="c1"># Add size class if specified</span>
+<a id="__codelineno-0-122" name="__codelineno-0-122"></a>    <span class="k">if</span> <span class="n">c_size</span><span class="p">:</span>
+<a id="__codelineno-0-123" name="__codelineno-0-123"></a>        <span class="n">classes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;btn-</span><span class="si">{</span><span class="n">c_size</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-124" name="__codelineno-0-124"></a>
+<a id="__codelineno-0-125" name="__codelineno-0-125"></a>    <span class="k">if</span> <span class="n">c_full_width</span><span class="p">:</span>
+<a id="__codelineno-0-126" name="__codelineno-0-126"></a>        <span class="n">classes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;w-100&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-127" name="__codelineno-0-127"></a>
+<a id="__codelineno-0-128" name="__codelineno-0-128"></a>    <span class="k">if</span> <span class="n">c_pill</span><span class="p">:</span>
+<a id="__codelineno-0-129" name="__codelineno-0-129"></a>        <span class="n">classes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;rounded-pill&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-130" name="__codelineno-0-130"></a>
+<a id="__codelineno-0-131" name="__codelineno-0-131"></a>    <span class="k">if</span> <span class="n">c_active</span><span class="p">:</span>
+<a id="__codelineno-0-132" name="__codelineno-0-132"></a>        <span class="n">classes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;active&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-133" name="__codelineno-0-133"></a>
+<a id="__codelineno-0-134" name="__codelineno-0-134"></a>    <span class="c1"># Merge with user classes</span>
+<a id="__codelineno-0-135" name="__codelineno-0-135"></a>    <span class="n">user_cls</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;cls&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-136" name="__codelineno-0-136"></a>    <span class="n">all_classes</span> <span class="o">=</span> <span class="n">merge_classes</span><span class="p">(</span><span class="s2">&quot;btn&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">classes</span><span class="p">),</span> <span class="n">user_cls</span><span class="p">)</span>
+<a id="__codelineno-0-137" name="__codelineno-0-137"></a>
+<a id="__codelineno-0-138" name="__codelineno-0-138"></a>    <span class="c1"># Build attributes with proper conversion</span>
+<a id="__codelineno-0-139" name="__codelineno-0-139"></a>    <span class="n">attrs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;cls&quot;</span><span class="p">:</span> <span class="n">all_classes</span><span class="p">}</span>
+<a id="__codelineno-0-140" name="__codelineno-0-140"></a>
+<a id="__codelineno-0-141" name="__codelineno-0-141"></a>    <span class="c1"># Optional style + css vars (handled by convert_attrs)</span>
+<a id="__codelineno-0-142" name="__codelineno-0-142"></a>    <span class="k">if</span> <span class="n">style</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-143" name="__codelineno-0-143"></a>        <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;style&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">style</span>
+<a id="__codelineno-0-144" name="__codelineno-0-144"></a>    <span class="k">if</span> <span class="n">css_vars</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-145" name="__codelineno-0-145"></a>        <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;css_vars&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">css_vars</span>
+<a id="__codelineno-0-146" name="__codelineno-0-146"></a>
+<a id="__codelineno-0-147" name="__codelineno-0-147"></a>    <span class="c1"># Handle states</span>
+<a id="__codelineno-0-148" name="__codelineno-0-148"></a>    <span class="k">if</span> <span class="n">c_active</span><span class="p">:</span>
+<a id="__codelineno-0-149" name="__codelineno-0-149"></a>        <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;aria_pressed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span>
+<a id="__codelineno-0-150" name="__codelineno-0-150"></a>
+<a id="__codelineno-0-151" name="__codelineno-0-151"></a>    <span class="k">if</span> <span class="n">loading</span><span class="p">:</span>
+<a id="__codelineno-0-152" name="__codelineno-0-152"></a>        <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;aria_busy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span>
+<a id="__codelineno-0-153" name="__codelineno-0-153"></a>
+<a id="__codelineno-0-154" name="__codelineno-0-154"></a>    <span class="c1"># Disabled/loading behavior differs for &lt;button&gt; vs &lt;a&gt;</span>
+<a id="__codelineno-0-155" name="__codelineno-0-155"></a>    <span class="k">if</span> <span class="n">loading</span> <span class="ow">or</span> <span class="n">c_disabled</span><span class="p">:</span>
+<a id="__codelineno-0-156" name="__codelineno-0-156"></a>        <span class="k">if</span> <span class="n">as_</span> <span class="o">==</span> <span class="s2">&quot;button&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-157" name="__codelineno-0-157"></a>            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;disabled&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-0-158" name="__codelineno-0-158"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-159" name="__codelineno-0-159"></a>            <span class="c1"># Bootstrap recommends `.disabled` + aria-disabled for anchors</span>
+<a id="__codelineno-0-160" name="__codelineno-0-160"></a>            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;aria_disabled&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;true&quot;</span>
+<a id="__codelineno-0-161" name="__codelineno-0-161"></a>            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;tabindex&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;-1&quot;</span>
+<a id="__codelineno-0-162" name="__codelineno-0-162"></a>            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;cls&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merge_classes</span><span class="p">(</span><span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cls&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span> <span class="s2">&quot;disabled&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-163" name="__codelineno-0-163"></a>
+<a id="__codelineno-0-164" name="__codelineno-0-164"></a>    <span class="c1"># Convert remaining kwargs (including hx_*, data_*, etc.)</span>
+<a id="__codelineno-0-165" name="__codelineno-0-165"></a>    <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">convert_attrs</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
+<a id="__codelineno-0-166" name="__codelineno-0-166"></a>
+<a id="__codelineno-0-167" name="__codelineno-0-167"></a>    <span class="c1"># Build content</span>
+<a id="__codelineno-0-168" name="__codelineno-0-168"></a>    <span class="n">content</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">children</span><span class="p">)</span>
+<a id="__codelineno-0-169" name="__codelineno-0-169"></a>
+<a id="__codelineno-0-170" name="__codelineno-0-170"></a>    <span class="c1"># Loading: optionally override/augment text</span>
+<a id="__codelineno-0-171" name="__codelineno-0-171"></a>    <span class="k">if</span> <span class="n">loading</span> <span class="ow">and</span> <span class="n">loading_text</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-172" name="__codelineno-0-172"></a>        <span class="k">if</span> <span class="n">content</span><span class="p">:</span>
+<a id="__codelineno-0-173" name="__codelineno-0-173"></a>            <span class="n">content</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="n">content</span><span class="p">]</span>  <span class="c1"># keep existing</span>
+<a id="__codelineno-0-174" name="__codelineno-0-174"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-175" name="__codelineno-0-175"></a>            <span class="n">content</span> <span class="o">=</span> <span class="p">[</span><span class="n">loading_text</span><span class="p">]</span>
+<a id="__codelineno-0-176" name="__codelineno-0-176"></a>
+<a id="__codelineno-0-177" name="__codelineno-0-177"></a>    <span class="c1"># Spinner</span>
+<a id="__codelineno-0-178" name="__codelineno-0-178"></a>    <span class="k">if</span> <span class="n">loading</span> <span class="ow">and</span> <span class="n">spinner</span><span class="p">:</span>
+<a id="__codelineno-0-179" name="__codelineno-0-179"></a>        <span class="k">if</span> <span class="n">spinner_pos</span> <span class="o">==</span> <span class="s2">&quot;start&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-180" name="__codelineno-0-180"></a>            <span class="n">default_spinner_cls</span> <span class="o">=</span> <span class="s2">&quot;spinner-border spinner-border-sm me-2&quot;</span>
+<a id="__codelineno-0-181" name="__codelineno-0-181"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-182" name="__codelineno-0-182"></a>            <span class="n">default_spinner_cls</span> <span class="o">=</span> <span class="s2">&quot;spinner-border spinner-border-sm ms-2&quot;</span>
+<a id="__codelineno-0-183" name="__codelineno-0-183"></a>
+<a id="__codelineno-0-184" name="__codelineno-0-184"></a>        <span class="n">spinner_elem</span> <span class="o">=</span> <span class="n">Span</span><span class="p">(</span>
+<a id="__codelineno-0-185" name="__codelineno-0-185"></a>            <span class="bp">cls</span><span class="o">=</span><span class="n">spinner_cls</span> <span class="ow">or</span> <span class="n">default_spinner_cls</span><span class="p">,</span>
+<a id="__codelineno-0-186" name="__codelineno-0-186"></a>            <span class="n">role</span><span class="o">=</span><span class="s2">&quot;status&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-187" name="__codelineno-0-187"></a>            <span class="n">aria_hidden</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-188" name="__codelineno-0-188"></a>        <span class="p">)</span>
+<a id="__codelineno-0-189" name="__codelineno-0-189"></a>        <span class="k">if</span> <span class="n">spinner_pos</span> <span class="o">==</span> <span class="s2">&quot;start&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-190" name="__codelineno-0-190"></a>            <span class="n">content</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">spinner_elem</span><span class="p">)</span>
+<a id="__codelineno-0-191" name="__codelineno-0-191"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-192" name="__codelineno-0-192"></a>            <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">spinner_elem</span><span class="p">)</span>
+<a id="__codelineno-0-193" name="__codelineno-0-193"></a>
+<a id="__codelineno-0-194" name="__codelineno-0-194"></a>    <span class="c1"># Icon</span>
+<a id="__codelineno-0-195" name="__codelineno-0-195"></a>    <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">loading</span><span class="p">)</span> <span class="ow">and</span> <span class="n">icon</span><span class="p">:</span>
+<a id="__codelineno-0-196" name="__codelineno-0-196"></a>        <span class="k">if</span> <span class="n">icon_pos</span> <span class="o">==</span> <span class="s2">&quot;start&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-197" name="__codelineno-0-197"></a>            <span class="n">default_icon_cls</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;bi bi-</span><span class="si">{</span><span class="n">icon</span><span class="si">}</span><span class="s2"> me-2&quot;</span>
+<a id="__codelineno-0-198" name="__codelineno-0-198"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-199" name="__codelineno-0-199"></a>            <span class="n">default_icon_cls</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;bi bi-</span><span class="si">{</span><span class="n">icon</span><span class="si">}</span><span class="s2"> ms-2&quot;</span>
+<a id="__codelineno-0-200" name="__codelineno-0-200"></a>        <span class="n">icon_elem</span> <span class="o">=</span> <span class="n">I</span><span class="p">(</span><span class="bp">cls</span><span class="o">=</span><span class="n">icon_cls</span> <span class="ow">or</span> <span class="n">default_icon_cls</span><span class="p">,</span> <span class="n">aria_hidden</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-201" name="__codelineno-0-201"></a>        <span class="k">if</span> <span class="n">icon_pos</span> <span class="o">==</span> <span class="s2">&quot;start&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-202" name="__codelineno-0-202"></a>            <span class="n">content</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">icon_elem</span><span class="p">)</span>
+<a id="__codelineno-0-203" name="__codelineno-0-203"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-204" name="__codelineno-0-204"></a>            <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">icon_elem</span><span class="p">)</span>
+<a id="__codelineno-0-205" name="__codelineno-0-205"></a>
+<a id="__codelineno-0-206" name="__codelineno-0-206"></a>    <span class="c1"># Render element</span>
+<a id="__codelineno-0-207" name="__codelineno-0-207"></a>    <span class="k">if</span> <span class="n">as_</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-208" name="__codelineno-0-208"></a>        <span class="c1"># Ensure href exists</span>
+<a id="__codelineno-0-209" name="__codelineno-0-209"></a>        <span class="k">if</span> <span class="s2">&quot;href&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">attrs</span><span class="p">:</span>
+<a id="__codelineno-0-210" name="__codelineno-0-210"></a>            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;#&quot;</span>
+<a id="__codelineno-0-211" name="__codelineno-0-211"></a>        <span class="c1"># Keep a11y semantics when used as a button</span>
+<a id="__codelineno-0-212" name="__codelineno-0-212"></a>        <span class="n">attrs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;role&quot;</span><span class="p">,</span> <span class="s2">&quot;button&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-213" name="__codelineno-0-213"></a>        <span class="k">return</span> <span class="n">A</span><span class="p">(</span><span class="o">*</span><span class="n">content</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">)</span>
+<a id="__codelineno-0-214" name="__codelineno-0-214"></a>
+<a id="__codelineno-0-215" name="__codelineno-0-215"></a>    <span class="k">return</span> <span class="n">FTButton</span><span class="p">(</span><span class="o">*</span><span class="n">content</span><span class="p">,</span> <span class="o">**</span><span class="n">attrs</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
