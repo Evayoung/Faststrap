@@ -53,6 +53,7 @@ def local_assets(static_url: str) -> tuple[Any, ...]:
     return (
         Link(rel="stylesheet", href=f"{base}/css/bootstrap.min.css"),
         Link(rel="stylesheet", href=f"{base}/css/bootstrap-icons.min.css"),
+        Link(rel="stylesheet", href=f"{base}/css/faststrap-fx.css"),
         Script(src=f"{base}/js/bootstrap.bundle.min.js"),
     )
 
@@ -122,6 +123,8 @@ def get_assets(
     static_url: str | None = None,
     theme: str | Theme | None = None,
     mode: ModeType = "light",
+    font_family: str | None = None,
+    font_weights: list[int] | None = None,
 ) -> tuple[Any, ...]:
     """
     Get Bootstrap assets for injection.
@@ -132,6 +135,8 @@ def get_assets(
         static_url: Custom static URL (if using local assets)
         theme: Theme name (str) or Theme instance
         mode: Color mode - "light", "dark", or "auto"
+        font_family: Google Font name (e.g., "Inter", "Roboto", "Poppins")
+        font_weights: Font weights to load (default: [400, 500, 700])
 
     Returns:
         Tuple of FastHTML elements for app.hdrs
@@ -147,6 +152,16 @@ def get_assets(
 
     elements = list(assets)
 
+    # Add Google Fonts link if specified (BEFORE other styles for proper loading)
+    if font_family:
+        weights = font_weights or [400, 500, 700]
+        weights_str = ";".join(str(w) for w in weights)
+        font_url = f"https://fonts.googleapis.com/css2?family={font_family.replace(' ', '+')}:wght@{weights_str}&display=swap"
+        # Add preconnect for performance
+        elements.insert(0, Link(rel="preconnect", href="https://fonts.googleapis.com"))
+        elements.insert(1, Link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin=True))
+        elements.insert(2, Link(rel="stylesheet", href=font_url))
+
     if include_custom:
         elements.append(CUSTOM_STYLES)
         elements.append(INIT_SCRIPT)
@@ -161,6 +176,14 @@ def get_assets(
             raise ValueError("theme must be a string (theme name) or Theme instance")
         elements.append(theme_obj.to_style(mode=mode))
 
+    # Add font-family CSS if font specified (AFTER theme so it can override)
+    if font_family:
+        font_css = Style(
+            f":root {{ --bs-body-font-family: '{font_family}', sans-serif; }} "
+            f"body {{ font-family: var(--bs-body-font-family); }}"
+        )
+        elements.append(font_css)
+
     return tuple(elements)
 
 
@@ -174,14 +197,16 @@ def add_bootstrap(
     force_static_url: bool = False,
     include_favicon: bool = True,
     favicon_url: str | None = None,
+    font_family: str | None = None,
+    font_weights: list[int] | None = None,
 ) -> Any:
     """
     Enhance FastHTML app with Bootstrap (production-safe).
 
     Args:
         app: FastHTML application instance
-        theme: Color theme - either a built-in name (e.g., "green-nature", "purple-magic")
-               or a Theme instance created via create_theme()
+        theme: Color theme - either a built-in name (e.g., "green-nature", "purple-magic"),
+               a Theme instance created via create_theme(), or a community theme
         mode: Color mode for light/dark backgrounds:
               - "light": Light background, dark text (default)
               - "dark": Dark background, light text
@@ -192,6 +217,8 @@ def add_bootstrap(
         force_static_url: Force use of this URL even if already mounted
         include_favicon: Include default FastStrap favicon
         favicon_url: Custom favicon URL (overrides default)
+        font_family: Google Font name (e.g., "Inter", "Roboto", "Poppins")
+        font_weights: Font weights to load (default: [400, 500, 700])
 
     Returns:
         Modified app instance
@@ -210,6 +237,16 @@ def add_bootstrap(
         from faststrap import create_theme
         my_theme = create_theme(primary="#7BA05B", secondary="#48C774")
         add_bootstrap(app, theme=my_theme, mode="dark")
+
+        # Built-in theme with custom font
+        add_bootstrap(app, theme="green-nature", font_family="Inter")
+
+        # Custom theme with custom font
+        my_theme = create_theme(primary="#7BA05B")
+        add_bootstrap(app, theme=my_theme, font_family="Roboto", font_weights=[400, 600, 700])
+
+        # Font only, no theme
+        add_bootstrap(app, font_family="Poppins")
 
         # CDN mode for production
         add_bootstrap(app, theme="blue-ocean", mode="auto", use_cdn=True)
@@ -242,13 +279,15 @@ def add_bootstrap(
         default_favicon = get_default_favicon_url(use_cdn, actual_static_url)
         favicon_links = create_favicon_links(default_favicon)
 
-    # 3. Get Bootstrap assets with theme and mode
+    # 3. Get Bootstrap assets with theme, mode, and font
     bootstrap_assets = get_assets(
         use_cdn=use_cdn,
         include_custom=True,
         static_url=actual_static_url if not use_cdn else None,
         theme=theme,
         mode=mode,
+        font_family=font_family,
+        font_weights=font_weights,
     )
 
     # 4. Idempotent Header Management

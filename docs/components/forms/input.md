@@ -9,15 +9,19 @@ The `Input` component allows users to enter text, numbers, passwords, emails, an
 
 ## Quick Start
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="w-100">
+      <label class="form-label">Full Name</label>
+      <input type="text" class="form-control" placeholder="Enter your name">
+    </div>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-from faststrap import Input
-
-# A simple text input
 Input(placeholder="Enter your name", label="Full Name")
 ```
-
-<div class="result" markdown>
-![Screenshot: Basic Input with Label](../assets/images/input-basic.png){ width=300 }
+  </div>
 </div>
 
 ---
@@ -28,72 +32,122 @@ Input(placeholder="Enter your name", label="Full Name")
 FastStrap supports all HTML5 input types. Adding a `label` argument automatically creates a properly accessible `<label>` associated with the input.
 
 !!! note "Code & Output"
-    ```python
-    Input(type="email", label="Email Address", placeholder="name@example.com")
-    Input(type="password", label="Password")
-    Input(type="color", label="Choose Color", value="#563d7c")
-    ```
-    <div class="result" markdown>
-    ![Screenshot: Email input, Password input, Color picker](../assets/images/input-types.png)
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="w-100 d-flex flex-column gap-3">
+      <div>
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-control" placeholder="name@example.com">
+      </div>
+      <div>
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control">
+      </div>
     </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+Input(type="email", label="Email Address", placeholder="name@example.com")
+Input(type="password", label="Password")
+```
+  </div>
+</div>
 
 ### 2. Sizing
 Match inputs to buttons or other components using `size`.
 
-!!! note "Code & Output"
-    ```python
-    Input(placeholder="Large Input", size="lg")
-    Input(placeholder="Default Input")
-    Input(placeholder="Small Input", size="sm")
-    ```
-    <div class="result" markdown>
-    ![Screenshot: Large, Default, and Small inputs](../assets/images/input-sizes.png)
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="w-100 d-flex flex-column gap-3">
+      <input type="text" class="form-control form-control-lg" placeholder="Large Input">
+      <input type="text" class="form-control" placeholder="Default Input">
+      <input type="text" class="form-control form-control-sm" placeholder="Small Input">
     </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+Input(placeholder="Large Input", size="lg")
+Input(placeholder="Default Input")
+Input(placeholder="Small Input", size="sm")
+```
+  </div>
+</div>
 
 ### 3. Utility Text and Disabled State
 Add flexible helper text below the input using `help_text`. Use `disabled` or `readonly` to restrict interaction.
 
-!!! note "Code & Output"
-    ```python
-    Input(
-        label="Username", 
-        help_text="Must be 8-20 characters long.",
-        disabled=True,
-        value="jdoe_archived"
-    )
-    ```
-    <div class="result" markdown>
-    ![Screenshot: Disabled input with help text below it](../assets/images/input-disabled.png)
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="w-100">
+      <label class="form-label">Username</label>
+      <input type="text" class="form-control" value="jdoe_archived" disabled>
+      <div class="form-text">Must be 8-20 characters long.</div>
     </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+Input(
+    label="Username", 
+    help_text="Must be 8-20 characters long.",
+    disabled=True,
+    value="jdoe_archived"
+)
+```
+  </div>
+</div>
 
 ---
 
 ## Practical Functionality
 
-### 1. Validation States
-Communicate success or error states vividly. This is critical for form feedback.
-
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="w-100 d-flex flex-column gap-3">
+      <div class="has-validation">
+        <input type="text" class="form-control is-valid" value="Correct!">
+        <div class="valid-feedback">This username is available.</div>
+      </div>
+      <div class="has-validation">
+        <input type="text" class="form-control is-invalid" value="Invalid data">
+        <div class="invalid-feedback">Please provide a valid entry.</div>
+      </div>
+    </div>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-# Valid state (Green border + checkmark)
-Input("valid_user", class="is-valid", value="Correct!")
+# Valid state (Green border)
+Input(class="is-valid", value="Correct!")
 
-# Invalid state (Red border + warning icon)
-Input("invalid_csv", class="is-invalid", value="Invalid data")
+# Invalid state (Red border)
+Input(class="is-invalid", value="Invalid data")
 ```
+  </div>
+</div>
 
 ### 2. Floating Labels
 Bootstrap's modern "Floating Label" pattern moves the label *inside* the input, floating up when the user types.
 
 ```python
-from faststrap import FloatingLabel
-
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="form-floating w-100">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email Address</label>
+    </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
 FloatingLabel(
     Input("email", placeholder="name@example.com"),
     label="Email Address"
 )
 ```
-<div class="result" markdown>
-![Animation: Label floating up when input is focused](../assets/videos/input-floating.gif)
+  </div>
 </div>
 
 ### 3. HTMX Integration
@@ -126,15 +180,25 @@ Customize standard form colors and spacing.
 ### 2. Input Groups
 Combine inputs with text or buttons using `InputGroup`.
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="input-group w-100">
+      <span class="input-group-text">@</span>
+      <input type="text" class="form-control" placeholder="Username">
+      <span class="input-group-text">.com</span>
+    </div>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-from faststrap import InputGroup, InputGroupText
-
 InputGroup(
     InputGroupText("@"),
     Input(placeholder="Username"),
     InputGroupText(".com")
 )
 ```
+  </div>
+</div>
 
 ---
 

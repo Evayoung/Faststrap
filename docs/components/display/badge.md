@@ -9,15 +9,16 @@ Small, circular or pill-shaped indicators for status, counts, or labels. Badges 
 
 ## Quick Start
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <span class="badge text-bg-primary">New</span>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-from faststrap import Badge
-
-# A simple primary badge
 Badge("New", variant="primary")
 ```
-
-<div class="result" markdown>
-![Screenshot: A small blue 'New' badge](../../assets/images/badge-basic.png){ width=100 }
+  </div>
 </div>
 
 ---
@@ -28,36 +29,53 @@ Badge("New", variant="primary")
 Like buttons, badges use semantic variants for meaning.
 
 !!! note "Code & Output"
-    ```python
-    Badge("Success", variant="success")
-    Badge("Danger", variant="danger")
-    Badge("Warning", variant="warning", pill=True) # Rounded pill shape
-    Badge("Light", variant="light", cls="text-dark") # Light needs dark text
-    ```
-    <div class="result" markdown>
-    ![Screenshot: Badges in Green, Red, Yellow (Pill), and White](../../assets/images/badge-variants.png)
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="d-flex gap-2">
+      <span class="badge text-bg-success">Success</span>
+      <span class="badge text-bg-danger">Danger</span>
+      <span class="badge rounded-pill text-bg-warning">Warning</span>
+      <span class="badge text-bg-light text-dark">Light</span>
     </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+Badge("Success", variant="success")
+Badge("Danger", variant="danger")
+Badge("Warning", variant="warning", pill=True)
+Badge("Light", variant="light", cls="text-dark")
+```
+  </div>
+</div>
 
 ### 2. Contextual Badges
 Badges are often placed inside other components like Buttons or Headings.
 
-!!! note "Code & Output"
-    ```python
-    from faststrap import Button, H1
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render flex-column gap-3">
+    <!-- Notification count in a button -->
+    <button class="btn btn-primary d-flex align-items-center">
+      Notifications <span class="badge rounded-pill text-bg-light text-dark ms-2">99+</span>
+    </button>
+    <!-- Status in a heading -->
+    <h1 class="mb-0">Documentation <span class="badge text-bg-info">Beta</span></h1>
+  </div>
+  <div class="preview-code" markdown>
+```python
+# Notification count in a button
+Button(
+    "Notifications ", 
+    Badge("99+", variant="light", pill=True), 
+    variant="primary"
+)
 
-    # Notification count in a button
-    Button(
-        "Notifications ", 
-        Badge("99+", variant="light", pill=True), 
-        variant="primary"
-    )
-
-    # Status in a heading
-    H1("Documentation ", Badge("Beta", variant="info"))
-    ```
-    <div class="result" markdown>
-    ![Screenshot: Button with '99+' badge and H1 with 'Beta' badge](../../assets/images/badge-contextual.png)
-    </div>
+# Status in a heading
+H1("Documentation ", Badge("Beta", variant="info"))
+```
+  </div>
+</div>
 
 ---
 

@@ -1,5 +1,98 @@
 :root {
-  --md-primary-fg-color:        #1e3a5f;
+  --md-primary-fg-color: #1e3a5f;
   --md-primary-fg-color--light: #2c5282;
-  --md-primary-fg-color--dark:  #0d1b2a;
+  --md-primary-fg-color--dark: #0d1b2a;
+}
+
+/* Fix Bootstrap Reboot conflicts with MkDocs Material */
+.md-typeset a:not(.btn) {
+  text-decoration: none !important;
+  color: var(--md-typeset-a-color) !important;
+}
+
+.md-nav__link,
+.md-footer__link,
+.md-toc__link {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.md-nav__link:hover,
+.md-nav__link--active {
+  color: var(--md-primary-fg-color) !important;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 2rem !important;
+}
+
+/* Restore Material Button and Typography appearance */
+.md-button {
+  text-decoration: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit !important;
+  margin-bottom: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+
+/* Component Preview Card */
+.component-preview {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+[data-bs-theme="dark"] .component-preview {
+  border-color: #444;
+  background: #1a1a1a;
+}
+
+.preview-header {
+  padding: 0.75rem 1.25rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6c757d;
+}
+
+[data-bs-theme="dark"] .preview-header {
+  background: #222;
+  border-color: #444;
+}
+
+.preview-render {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+  /* Theme-aware primary colors */
+  --bs-primary: #1e3a5f;
+  --bs-primary-rgb: 30, 58, 95;
+  --bs-link-color: #1e3a5f;
+  --bs-link-hover-color: #2c5282;
+}
+
+.preview-code {
+  margin: 0 !important;
+  border-top: 1px solid #dee2e6 !important;
+  border-radius: 0 !important;
+}
+
+[data-bs-theme="dark"] .preview-code {
+  border-color: #444 !important;
 }

@@ -9,17 +9,23 @@ The `Figure` component is used for displaying content—like images—with an op
 
 ## Quick Start
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <figure class="figure">
+      <img src="https://placehold.co/600x400" class="figure-img img-fluid rounded" alt="...">
+      <figcaption class="figure-caption text-center">A placeholder figure caption.</figcaption>
+    </figure>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-from faststrap import Figure
-
 Figure(
     src="https://placehold.co/600x400",
-    caption="A placeholder figure caption."
+    caption="A placeholder figure caption.",
+    align="center"
 )
 ```
-
-<div class="result" markdown>
-![Screenshot: Image with muted caption text below it](../../assets/images/figure-basic.png)
+  </div>
 </div>
 
 ---
@@ -30,13 +36,24 @@ Figure(
 Captions can be aligned to the start (left), center, or end (right).
 
 !!! note "Code & Output"
-    ```python
-    Figure(
-        src="...", 
-        caption="Right aligned caption", 
-        align="end"
-    )
-    ```
+<div class="component-preview">
+  <div class="preview-header">Live Preview (Alignment)</div>
+  <div class="preview-render">
+    <figure class="figure">
+      <img src="https://placehold.co/300x200" class="figure-img img-fluid" alt="...">
+      <figcaption class="figure-caption text-end">Right aligned caption</figcaption>
+    </figure>
+  </div>
+  <div class="preview-code" markdown>
+```python
+Figure(
+    src="...", 
+    caption="Right aligned caption", 
+    align="end"
+)
+```
+  </div>
+</div>
 
 ### 2. Styling (Thumbnail & Rounded)
 Wrap the image in a thumbnail border or round the corners.

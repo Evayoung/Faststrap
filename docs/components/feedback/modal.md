@@ -9,15 +9,33 @@ Modals are "dialogs" that appear in front of the application content. They provi
 
 ## Quick Start
 
-Modals require a **Trigger** (usually a Button) and a **Modal Definition**.
-
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render" style="background: #f0f2f5;">
+    <div class="modal position-static d-block" tabindex="-1">
+      <div class="modal-dialog m-0">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Example Modal</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Hello! This is a modal dialog.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-from faststrap import Modal, Button, Div
-
-# 1. The Trigger
+# The Trigger
 trigger = Button("Launch Modal", data_bs_toggle="modal", data_bs_target="#myModal")
 
-# 2. The Modal
+# The Modal Definition
 modal = Modal(
     "Hello! This is a modal dialog.", 
     title="Example Modal", 
@@ -25,9 +43,7 @@ modal = Modal(
     footer=Button("Save", variant="primary")
 )
 ```
-
-<div class="result" markdown>
-![Video: Click button -> Modal fades in front of blurry background](../../assets/videos/modal-demo.gif)
+  </div>
 </div>
 
 ---
@@ -37,26 +53,63 @@ modal = Modal(
 ### 1. Sizing
 Specify the viewport width using `size`.
 
-!!! note "Code & Output"
-    ```python
-    Modal(..., size="sm") # Small
-    Modal(..., size="lg") # Large
-    Modal(..., size="xl") # Extra Large
-    Modal(..., size="fullscreen") # Full screen
-    ```
+<div class="component-preview">
+  <div class="preview-header">Live Preview (Sizing)</div>
+  <div class="preview-render p-0 flex-column overflow-hidden" style="background: #f0f2f5;">
+    <!-- Small Modal -->
+    <div class="modal position-static d-block" tabindex="-1">
+      <div class="modal-dialog modal-sm m-2">
+        <div class="modal-content">
+          <div class="modal-header"><h5 class="modal-title fs-6">Small Modal</h5></div>
+        </div>
+      </div>
+    </div>
+    <!-- Large Modal -->
+    <div class="modal position-static d-block" tabindex="-1">
+      <div class="modal-dialog modal-lg m-2">
+        <div class="modal-content">
+          <div class="modal-header"><h5 class="modal-title fs-6">Large Modal</h5></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+Modal(..., size="sm") # Small
+Modal(..., size="lg") # Large
+```
+  </div>
+</div>
 
 ### 2. Centered & Scrollable
 Handle long content or improve ergonomics by centering the dialog.
 
-!!! note "Code & Output"
-    ```python
-    Modal(
-        "Lots of long text here...", 
-        centered=True, 
-        scrollable=True,
-        title="Vertically Centered"
-    )
-    ```
+<div class="component-preview">
+  <div class="preview-header">Live Preview (Centered)</div>
+  <div class="preview-render" style="background: #f0f2f5;">
+    <div class="modal position-static d-block" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered m-0">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Vertically Centered</h5>
+          </div>
+          <div class="modal-body">
+            <p>This modal is centered on the screen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+Modal(
+    "This modal is centered on the screen.", 
+    centered=True, 
+    title="Vertically Centered"
+)
+```
+  </div>
+</div>
 
 ### 3. Static Backdrop
 Prevents closing the modal when clicking the shaded background. Useful for high-stakes forms or "must-read" alerts.

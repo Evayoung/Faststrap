@@ -1,15 +1,25 @@
-# FastStrap Roadmap – Updated December 2025
+# FastStrap Roadmap – Updated January 2026
 
 **Vision:** The most complete, Pythonic, zero-JS Bootstrap 5 component library for FastHTML — 100+ production-ready components built by the community, for the community.
 
 ---
 
-## Current Status (v0.4.5 – February 2026)
+## Current Status (v0.4.5 – January 2026)
 
 **38 components live** – Phase 1 through 4B complete  
 **230+ tests** – 80%+ coverage  
 **Full HTMX + Bootstrap 5.3.3 support**  
 **Zero custom JavaScript required**
+
+## 📈 Overall Progress to v1.0
+
+```text
+Components:   ████████░░ 38/100 (38%)
+Tests:        ████████░░ 230/800 (29%)
+Coverage:     ████████░░ 85/95   (89%)
+Contributors: ███░░░░░░░ 15+/100 (15%)
+
+```
 
 ### Completed Phases
 
@@ -17,14 +27,14 @@
 |-------|------------|--------|----------|
 | 1–2 | 12 | ✅ Complete | Dec 2025 |
 | 3 | +8 (Tabs, Dropdown, Input, Select, Breadcrumb, Pagination, Spinner, Progress) | ✅ Complete | Dec 2025 |
-| 4A | +10 (Table, Accordion, Checkbox, Radio, Switch, Range, ListGroup, Collapse, InputGroup, FloatingLabel) | ✅ Complete | Jan 2026 |
-| 4B | +8 (FileInput, Tooltip, Popover, Figure, ConfirmDialog, EmptyState, StatCard, Hero) | ✅ Complete | Feb 2026 |
+| 4A | +10 (Table, Accordion, Checkbox, Radio, Switch, Range, ListGroup, Collapse, InputGroup, FloatingLabel) | ✅ Complete | Dec 2025 |
+| 4B | +8 (FileInput, Tooltip, Popover, Figure, ConfirmDialog, EmptyState, StatCard, Hero) | ✅ Complete | Jan 2026 |
 
 **Total: 38 production-ready components**
 
 ---
-
-## Phase 4A – Core Bootstrap Completion (v0.4.0 – Complete)
+## Detailed Breakdown (for reference)
+### Phase 4A – Core Bootstrap Completion (v0.4.0 – Complete)
 
 ✅ **30 total components reached**
 
@@ -43,7 +53,7 @@
 
 ---
 
-## Phase 4B – Enhanced Forms & Feedback (v0.4.5 – Complete)
+### Phase 4B – Enhanced Forms & Feedback (v0.4.5 – Complete)
 
 ✅ **38 total components reached**
 
@@ -62,49 +72,144 @@
 
 ---
 
-## Phase 5 – Layout & Navigation (v0.5.0 – Target Mar 2026)
+## 🔒 Framework Guarantees (v1.0+)
 
-**Goal:** SaaS-ready layout patterns  
-**Target:** 50 total components
-
-### Components to Build
-
-| Priority | Component | Status | Owner | Notes |
-|----------|-----------|--------|-------|-------|
-| 1 | `Sidebar` | [ ] Open | — | Collapsible, responsive |
-| 2 | `Footer` | [ ] Open | — | Standard layout component |
-| 3 | `DashboardLayout` | [ ] Open | — | Sidebar + Topbar + Content |
-| 4 | `Timeline` | [ ] Open | — | Activity/event timeline |
-| 5 | `ProfileDropdown` | [ ] Open | — | Dropdown + Avatar pattern |
-| 6 | `SearchBar` | [ ] Open | — | Input + suggestions |
-| 7 | `FeatureCard` | [ ] Open | — | Icon + title + description |
-| 8 | `PricingCard` | [ ] Open | — | Pricing table card |
-| 9 | `Carousel` | [ ] Open | — | Slides, indicators, controls |
-| 10 | `MegaMenu` | [ ] Open | — | Complex dropdown variant |
-| 11 | `NotificationCenter` | [ ] Open | — | Toast stack + dropdown |
-| 12 | `SectionDivider` | [ ] Open | — | Visual content separator |
+Faststrap commits to the following architectural contracts:
+* **Deterministic HTML**: Server-rendered output is predictable and testable (`assert_html`).
+* **Zero-JS Core**: All components function without JavaScript; enhancements are progressive.
+* **No Client State**: We avoid hidden client-side state stores; state lives on the server.
+* **Accessibility First**: WCAG-aligned defaults for all components.
+* **Stability Markers**: Explicit `@stable` and `@experimental` decorators for API confidence.
 
 ---
 
-## Phase 6 – Data & Advanced (v0.6.0 – Target May 2026) 
+## Phase 4C – Documentation & Polish (v0.4.6 – Completed)
 
-**Goal:** Advanced data display and interaction patterns  
-**Target:** 60+ total components
+✅ **Documentation Overhaul**
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Interactive Previews | ✅ Complete | All 40+ components live-rendered |
+| Theme Isolation | ✅ Complete | Fixed CSS conflicts with MkDocs Material |
+| `init.js` | ✅ Complete | Bootstrap socialization for Tooltips/Popovers |
+
+
+---
+
+## Phase 5 – Composed UI & Design System Layer (v0.5.0 – Target Feb 2026)
+
+**Goal:** SaaS-ready patterns, layouts, and visual effects.  
+**Focus:** `faststrap.layouts`, `faststrap.patterns`, `faststrap.effects`.
 
 ### Components to Build
 
-| Priority | Component | Status | Owner | Notes |
-|----------|-----------|--------|-------|-------|
-| 1 | `DataTable` | [ ] Open | — | Sorting, filtering, pagination |
-| 2 | `TagInput` | [ ] Open | — | Dynamic badge/tag management |
-| 3 | `FormWizard` / `Stepper` | [ ] Open | — | Multi-step form navigation |
-| 4 | `FileUploader` | [ ] Open | — | Drag-drop with preview |
-| 5 | `ChartContainer` | [ ] Open | — | Wrapper for chart libraries |
-| 6 | `ChatBubble` | [ ] Open | — | Message bubble component |
-| 7 | `ChatLayout` | [ ] Open | — | Full chat interface |
-| 8 | `KanbanColumn` | [ ] Open | — | Drag-drop board columns |
-| 9 | `ActivityFeed` | [ ] Open | — | Social-style activity list |
-| 10 | `MediaGallery` | [ ] Open | — | Image/video grid layout |
+| Priority | Component | Implementation | Notes |
+|----------|-----------|----------------|-------|
+| 1 | `faststrap.effects` | **New Module** | Zero-JS visual effects (fade, lift, highlight) |
+| 2 | `DashboardLayout` | `faststrap.layouts` | Sidebar + Navbar + Content slot |
+| 3 | `LandingLayout` | `faststrap.layouts` | Hero + Features + Footer pattern |
+| 4 | `NavbarModern` | `faststrap.patterns` | Glassmorphism, scroll-aware |
+| 5 | `FeatureGrid` | `faststrap.patterns` | Icon + Title + Text grid |
+| 6 | `PricingGroup` | `faststrap.patterns` | 3-column pricing cards |
+| 7 | `faststrap init` | **New Tool** | CLI to scaffold these layouts |
+| 8 | `create_theme` | **Update** | Support for centralized Google Fonts |
+
+---
+
+## Phase 6 – Data & Ecosystem (v0.6.x – Apr-Jul 2026)
+
+**Goal:** Deep Python integration and developer experience.
+
+### v0.6.0 – Data Layer (Apr 2026)
+- [ ] `Table.from_df()`: Pandas/Polars integration (Sort/Search/Export)
+- [ ] `Chart` Wrapper: Static SVG (Matplotlib) + Responsive container
+
+### v0.6.1 – Productivity Layer (May 2026)
+- [ ] `Form.from_pydantic()`: Type-safe form generation + Validation
+- [ ] HTMX Presets: `ActiveSearch`, `InfiniteScroll`, `ConfirmAction`
+
+### v0.6.2 – Auth & DX Layer (Jun 2026)
+- [ ] `faststrap.auth`: Drop-in `LoginCard`, `SignupForm`, `AuthFlow`
+- [ ] `faststrap.dev`: Inspector middleware (HTMX debugging)
+- [ ] `faststrap lint`: Static analysis for best practices
+
+### v0.6.3 – Realtime Layer (Jul 2026)
+- [ ] `faststrap.realtime`: SSE wrappers (`LiveBadge`, `LiveTable`)
+
+---
+
+## 🌍 Community Ecosystem (Safe Path)
+
+**Goal:** Enable a community-driven ecosystem without bloating core.
+
+These phases are documentation and process-driven, not runtime dependencies.
+
+### 1. Extension Contracts (v0.5.x)
+- [ ] Document contracts for Theme Packs and Component Packs.
+- [ ] Define "explicit import" usage pattern (no auto-discovery).
+
+### 2. The Registry (v0.6.x)
+- [ ] Create `Faststrap-org/faststrap-extensions` repo (Metadata only).
+- [ ] List approved themes and components.
+
+### 3. Tooling (v0.7+)
+- [ ] `faststrap init --template=community/xyz` (Scaffold only).
+
+### Extension Design Rules
+
+All Faststrap extensions must:
+- Use explicit imports (no auto-registration)
+- Avoid monkey-patching core APIs
+- Declare compatibility with Faststrap versions
+- Remain optional and replaceable
+- Never affect core runtime behavior
+
+---
+
+## 🔒 Stability & Versioning Policy
+
+### Component Maturity Levels
+
+🟢 **Stable** (`@stable`)
+- API won't break in minor versions.
+- Comprehensive tests (>90% coverage).
+- Example: `Button`, `Card`, `Input`.
+
+🟡 **Beta** (`@beta`)
+- API may change in minor versions.
+- Basic tests (>70% coverage).
+- Example: New Phase 6 components.
+
+🔴 **Experimental** (`@experimental`)
+- API will likely change.
+- Minimal tests.
+- Use at own risk.
+
+---
+
+## 🚫 Non-Goals
+
+What Faststrap intentionally *won't* do:
+
+- ❌ **Client-side reactivity** (use Alpine.js if needed)
+- ❌ **Custom CSS framework** (we're Bootstrap-native)
+- ❌ **Database ORM** (use SQLModel/SQLAlchemy)
+- ❌ **Full auth backend** (we provide UI, you provide logic)
+
+**Why?** Faststrap excels at Bootstrap + HTMX + Python. We integrate with best-in-class tools rather than replacing them.
+
+---
+
+## Phase 6E – Accessibility & Compliance (Post-v0.6)
+
+**Goal**: Enterprise-grade compliance tools.
+- [ ] ARIA validation helpers
+- [ ] Focus management utilities
+- [ ] Contrast-safe defaults checking
+
+
+    Accessibility defaults are already applied throughout earlier phases; Phase 6E adds validation & compliance tooling.
+---
 
 ---
 
@@ -132,7 +237,7 @@
 | Components | 20 | 38 | 50 | 100+ |
 | Tests | 219 | 230+ | 500+ | 800+ |
 | Coverage | 80% | 85%+ | 90% | 95%+ |
-| Contributors | 15+ | 25+ | 50+ | 100+ |
+| Contributors | 5+ | 15+ | 25+ | 50+ |
 
 ---
 
@@ -171,7 +276,7 @@ Your votes directly influence what gets built next.
 
 ---
 
-**Last Updated: February 2026**  
+**Last Updated: January 2026**  
 **Current Version: 0.4.5 (38 components live)**
 
 **Let's build the definitive UI library for FastHTML — together.**

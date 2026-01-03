@@ -4,11 +4,13 @@ from typing import Any
 
 from fasthtml.common import H5, Div, Img
 
+from ...core._stability import stable
 from ...core.base import merge_classes
 from ...core.theme import resolve_defaults
 from ...utils.attrs import convert_attrs
 
 
+@stable
 def Card(
     *children: Any,
     title: str | None = None,

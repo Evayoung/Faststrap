@@ -11,15 +11,16 @@ The `Button` component is one of the most fundamental components in web developm
 
 Here is the simplest way to create a button.
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <button class="btn btn-primary">Click Me</button>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-from faststrap import Button
-
-# A standard primary action button
 Button("Click Me", variant="primary")
 ```
-
-<div class="result" markdown>
-![Screenshot: Basic Primary Button - A blue button saying 'Click Me'](../../assets/images/button-basic.png){ width=200 }
+  </div>
 </div>
 
 ---
@@ -30,23 +31,35 @@ Button("Click Me", variant="primary")
 
 In Bootstrap (and FastStrap), colors carry *semantic meaning*. You don't just pick "blue"; you pick "Primary" (for the main action).
 
-!!! note "Code & Output"
-    
-    ```python
-    Button("Primary", variant="primary")
-    Button("Secondary", variant="secondary")
-    Button("Success", variant="success")
-    Button("Danger", variant="danger")
-    Button("Warning", variant="warning")
-    Button("Info", variant="info")
-    Button("Light", variant="light")
-    Button("Dark", variant="dark")
-    Button("Link", variant="link")
-    ```
-
-    <div class="result" markdown>
-    ![Screenshot: Row of solid buttons in all colors: Blue (Primary), Gray (Secondary), Green (Success), Red (Danger), Yellow (Warning), Cyan (Info), White (Light), Black (Dark), Standard Link (Link)](../../assets/images/buttons-solid.png)
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="d-flex flex-wrap gap-2 justify-content-center">
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-success">Success</button>
+      <button class="btn btn-danger">Danger</button>
+      <button class="btn btn-warning">Warning</button>
+      <button class="btn btn-info">Info</button>
+      <button class="btn btn-light">Light</button>
+      <button class="btn btn-dark">Dark</button>
+      <button class="btn btn-link">Link</button>
     </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+Button("Primary", variant="primary")
+Button("Secondary", variant="secondary")
+Button("Success", variant="success")
+Button("Danger", variant="danger")
+Button("Warning", variant="warning")
+Button("Info", variant="info")
+Button("Light", variant="light")
+Button("Dark", variant="dark")
+Button("Link", variant="link")
+```
+  </div>
+</div>
 
 **Understanding Semantic Colors:**
 
@@ -66,107 +79,129 @@ In Bootstrap (and FastStrap), colors carry *semantic meaning*. You don't just pi
 
 Sometimes a solid color is too "heavy" for a UI. Use `outline=True` for a lighter look with a transparent background and colored border.
 
-!!! note "Code & Output"
-
-    ```python
-    # A less aggressive 'Delete' button
-    Button("Delete", variant="danger", outline=True)
-    Button("Save Draft", variant="primary", outline=True)
-    ```
-
-    <div class="result" markdown>
-    ![Screenshot: Outline Buttons - Primary Outline (Blue border), Danger Outline (Red border)](../../assets/images/buttons-outline.png)
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="d-flex gap-2">
+      <button class="btn btn-outline-danger">Delete</button>
+      <button class="btn btn-outline-primary">Save Draft</button>
     </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+# A less aggressive 'Delete' button
+Button("Delete", variant="danger", outline=True)
+Button("Save Draft", variant="primary", outline=True)
+```
+  </div>
+</div>
 
 ### 3. Sizes
 
 Hierarchy matters. Make your most important buttons larger and secondary actions smaller.
 
-!!! note "Code & Output"
-
-    ```python
-    Button("Join Now!", size="lg", variant="primary") # Large Call-to-Action
-    Button("Default", variant="secondary")            # Default Size
-    Button("Details", size="sm", variant="info")      # Small table action
-    ```
-    
-    <div class="result" markdown>
-    ![Screenshot: Button Sizes - Large 'Join Now', Default 'Default', Small 'Details'](../../assets/images/buttons-sizes.png)
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="d-flex align-items-center gap-3">
+      <button class="btn btn-lg btn-primary">Join Now!</button>
+      <button class="btn btn-secondary">Default</button>
+      <button class="btn btn-sm btn-info">Details</button>
     </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+Button("Join Now!", size="lg", variant="primary") # Large Call-to-Action
+Button("Default", variant="secondary")            # Default Size
+Button("Details", size="sm", variant="info")      # Small table action
+```
+  </div>
+</div>
 
 ### 4. Full Width Buttons
 
 On mobile devices or in cards, you often want a button to stretch the full width of its container. Use `full_width=True`.
 
-!!! note "Code & Output"
-
-    ```python
-    from faststrap import Card, Input
-
-    # A Login Card example
-    Card(
-        Input(placeholder="Email"),
-        Button("Sign In", variant="primary", full_width=True), # Stretches 100%
-        style={"max-width": "300px"}
-    )
-    ```
-
-    <div class="result" markdown>
-    ![Screenshot: Full Width Button inside a Card](../assets/images/button-full-width.png){ width=300 }
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="card w-100" style="max-width:300px">
+      <div class="card-body">
+        <input type="email" class="form-control mb-2" placeholder="Email">
+        <button class="btn btn-primary w-100">Sign In</button>
+      </div>
     </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+# A Login Card example
+Card(
+    Input(placeholder="Email"),
+    Button("Sign In", variant="primary", full_width=True), # Stretches 100%
+    style={"max-width": "300px"}
+)
+```
+  </div>
+</div>
 
 ---
 
 ## Practical Functionality
 
-### 1. Buttons as Links
-
-Sometimes you need a button that *looks* like a button but *acts* like a link (taking you to a new page without HTMX). Use the `as_` argument.
-
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <a href="#" class="btn btn-primary">Go to Login</a>
+  </div>
+  <div class="preview-code" markdown>
 ```python
 # Renders as an <a href="/login" class="btn btn-primary"> tag
 Button("Go to Login", as_="a", href="/login", variant="primary")
 ```
+  </div>
+</div>
 
-### 2. Adding Icons
-
-Visual cues help users respond faster. FastStrap makes adding icons easy (using [Bootstrap Icons](https://icons.getbootstrap.com/)).
-
-!!! note "Code & Output"
-
-    ```python
-    # Icon at the START (default)
-    Button("Save", icon="check-circle", variant="success")
-
-    # Icon at the END
-    Button("Next Step", icon="arrow-right", icon_pos="end", variant="primary")
-    ```
-
-    <div class="result" markdown>
-    ![Screenshot: Buttons with icons - 'Save' has checkmark on left, 'Next Step' has arrow on right](../../assets/images/buttons-icons.png)
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="d-flex gap-2">
+      <button class="btn btn-success"><i class="bi bi-check-circle me-1"></i> Save</button>
+      <button class="btn btn-primary">Next Step <i class="bi bi-arrow-right ms-1"></i></button>
     </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+# Icon at the START (default)
+Button("Save", icon="check-circle", variant="success")
 
-### 3. Loading States (Great for HTMX)
+# Icon at the END
+Button("Next Step", icon="arrow-right", icon_pos="end", variant="primary")
+```
+  </div>
+</div>
 
-If you are using HTMX, you want to tell the user something is happening so they don't click twice. FastStrap buttons can handle this states automatically.
-
-!!! note "Code & Output"
-
-    ```python
-    # 1. Shows "Saving..." text
-    # 2. Shows a spinner
-    # 3. Disables the button to prevent double-clicks
-    Button(
-        "Save Profile",
-        hx_post="/profile/save",
-        loading_text="Saving...",
-        cls="btn-loading" # Helper class to trigger JS if needed
-    )
-    ```
-
-    <div class="result" markdown>
-    ![Video: Button click transition to loading spinner and disabled state](../../assets/videos/button-loading-demo.gif)
-    </div>
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <button class="btn btn-primary" disabled>
+      <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+      Saving...
+    </button>
+  </div>
+  <div class="preview-code" markdown>
+```python
+# 1. Shows "Saving..." text
+# 2. Shows a spinner
+# 3. Disables the button to prevent double-clicks
+Button(
+    "Save Profile",
+    hx_post="/profile/save",
+    loading_text="Saving...",
+    loading=True # Force state for preview
+)
+```
+  </div>
+</div>
 
 ---
 
@@ -193,6 +228,12 @@ The following variables are available on every button:
 
 **Example: Creating a Custom Purple Button**
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <button class="btn btn-primary" style="--bs-btn-bg: #6f42c1; --bs-btn-border-color: #6f42c1; --bs-btn-hover-bg: #59359a; --bs-btn-hover-border-color: #59359a; --bs-btn-color: #fff;">Purple Button</button>
+  </div>
+  <div class="preview-code" markdown>
 ```python
 # Create a dictionary of the variables you want to override
 purple_btn_theme = {
@@ -206,21 +247,27 @@ purple_btn_theme = {
 # Pass it to the css_vars argument
 Button("Purple Button", variant="primary", css_vars=purple_btn_theme)
 ```
-
-<div class="result" markdown>
-![Screenshot: A custom purple button styled via CSS variables](../../assets/images/button-purple.png)
+  </div>
 </div>
 
 ### 2. Standard CSS Classes
 
 You can pass standard Bootstrap utility classes (or your own classes) using `cls`.
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <button class="btn btn-info rounded-pill shadow-lg text-uppercase">Custom Style</button>
+  </div>
+  <div class="preview-code" markdown>
 ```python
 # 'rounded-pill': Fully rounded corners
 # 'shadow-lg': Large drop shadow
 # 'text-uppercase': ALL CAPS TEXT
 Button("Custom Style", variant="info", cls="rounded-pill shadow-lg text-uppercase")
 ```
+  </div>
+</div>
 
 ### 3. Data Attributes & Accessibility
 
@@ -247,29 +294,46 @@ Button(
 ### The "Submit & Reset" Toolbar
 A common pattern for forms, aligning buttons to the right or left.
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="d-flex align-items-center gap-2">
+      <button class="btn btn-primary">Submit</button>
+      <button class="btn btn-link text-decoration-none text-muted">Reset</button>
+    </div>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-from faststrap import Div, Button
-
 def FormActions():
     return Div(
         Button("Submit", type="submit", variant="primary"),
         Button("Reset", type="reset", variant="link", cls="text-decoration-none text-muted"),
-        cls="d-flex align-items-center gap-2" # d-flex (flexbox), gap-2 (spacing)
+        cls="d-flex align-items-center gap-2"
     )
 ```
+  </div>
+</div>
 
 ### The "Destructive Action"
 For actions that can't be undone, use `outline-danger` to warn the user but not catch the eye *too* much (to avoid accidental clicks), but switch to solid danger for the confirmation.
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <button class="btn btn-outline-danger"><i class="bi bi-trash me-1"></i> Delete Account</button>
+  </div>
+  <div class="preview-code" markdown>
 ```python
 Button(
     "Delete Account", 
-    variant="outline-danger", # Subtle warning
+    variant="outline-danger",
     icon="trash",
     data_bs_toggle="modal", 
-    data_bs_target="#confirm-delete-modal" # Triggers a modal
+    data_bs_target="#confirm-delete-modal"
 )
 ```
+  </div>
+</div>
 
 ---
 

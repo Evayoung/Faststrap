@@ -4,10 +4,12 @@ from typing import Any, Literal
 
 from fasthtml.common import H3, Div, P, Span
 
+from ...core._stability import beta
 from ...core.types import VariantType
 from .card import Card
 
 
+@beta
 def StatCard(
     title: str,
     value: str | int | float,

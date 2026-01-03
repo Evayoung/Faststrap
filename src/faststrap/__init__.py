@@ -75,8 +75,10 @@ from .components.navigation import (
     TabPane,
     Tabs,
 )
+from .core.effects import Fx
 from .core.assets import add_bootstrap, get_assets
 from .core.base import merge_classes
+from .core._stability import experimental, stable, beta
 from .core.theme import (
     Theme,
     create_theme,
@@ -169,4 +171,9 @@ __all__ = [
     "__version__",
     "__author__",
     "__license__",
+    "Fx",
+    # Stability
+    "stable",
+    "beta",
+    "experimental",
 ]

@@ -48,8 +48,36 @@ add_bootstrap(app, theme=my_brand)
 This function generates a small CSS block that overwrites Bootstrap's internal variables. It ensures that everything using `variant="primary"` (Buttons, Alerts, Badges, etc.) will now use your custom purple color.
 
 ---
+    
+## 3. Custom Fonts (Google Fonts)
 
-## 3. Dark Mode Support
+Faststrap makes it easy to use Google Fonts in your application without writing any HTML or CSS.
+
+```python
+from faststrap import add_bootstrap, create_theme
+
+# Built-in theme with custom font
+add_bootstrap(
+    app, 
+    theme="green-nature",
+    font_family="Inter",              # Font name from options below
+    font_weights=[400, 500, 600, 700] # Font weights to load
+)
+
+# Custom theme with custom font
+my_theme = create_theme(primary="#7BA05B")
+add_bootstrap(
+    app, 
+    theme=my_theme, 
+    font_family="Roboto Slab"
+)
+```
+
+The font will be automatically loaded from Google Fonts (with optimizations) and applied as the default body font for your application.
+
+---
+
+## 4. Dark Mode Support
 
 FastStrap supports Bootstrap's native color modes.
 
@@ -65,11 +93,11 @@ add_bootstrap(app, theme="light")
 ```
 
 ### Dark Mode Toggle
-If you want to allow users to switch themes manually, you can use the `ColorModeToggle` component (coming soon) or standard HTMX to update the `data-bs-theme` attribute on the `<html>` tag.
+If you want to allow users to switch themes manually, you can use standard HTMX to update the `data-bs-theme` attribute on the `<html>` tag.
 
 ---
 
-## 4. Per-Component CSS Variables
+## 5. Per-Component CSS Variables
 
 For one-off customizations that are too specific for a global theme, use the `css_vars` argument. This is the "Pro" way to customize without writing external CSS files.
 
@@ -86,7 +114,7 @@ Button("Upgrade to Pro", css_vars=gold_style)
 
 ---
 
-## 5. Custom CSS & Classes
+## 6. Custom CSS & Classes
 
 If you need full control, you can always link your own CSS file and use the `cls` argument to apply your styles.
 

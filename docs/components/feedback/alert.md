@@ -9,15 +9,16 @@ Alerts provide contextual feedback messages for typical user actions with a hand
 
 ## Quick Start
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="alert alert-success w-100" role="alert">Your profile has been updated!</div>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-from faststrap import Alert
-
-# A simple success alert
 Alert("Your profile has been updated!", variant="success")
 ```
-
-<div class="result" markdown>
-![Screenshot: Green success alert](../../assets/images/alert-basic.png){ width=500 }
+  </div>
 </div>
 
 ---
@@ -28,50 +29,71 @@ Alert("Your profile has been updated!", variant="success")
 Allow users to close the alert. This is handled automatically by Bootstrap's JS via FastStrap's `dismissible=True`.
 
 !!! note "Code & Output"
-    ```python
-    Alert(
-        "Important: Your session expires in 5 minutes.", 
-        variant="warning", 
-        dismissible=True
-    )
-    ```
-    <div class="result" markdown>
-    ![Screenshot: Warning alert with a 'X' close button](../../assets/images/alert-dismissible.png)
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="alert alert-warning alert-dismissible fade show w-100" role="alert">
+      Important: Your session expires in 5 minutes.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+Alert("Important: Your session expires in 5 minutes.", 
+      variant="warning", dismissible=True)
+```
+  </div>
+</div>
 
 ### 2. Rich Content
 Alerts can contain headings, links, and multiple paragraphs.
 
-!!! note "Code & Output"
-    ```python
-    from fasthtml.common import H4, P, Hr, A
-
-    Alert(
-        H4("Well done!", cls="alert-heading"),
-        P("Aww yeah, you successfully read this important alert message."),
-        Hr(),
-        P("Whenever you need to, be sure to use margin utilities to keep things nice and tidy."),
-        variant="success"
-    )
-    ```
-    <div class="result" markdown>
-    ![Screenshot: Large success alert with heading and paragraphs](../../assets/images/alert-rich.png)
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="alert alert-success w-100" role="alert">
+      <h4 class="alert-heading">Well done!</h4>
+      <p>Aww yeah, you successfully read this important alert message.</p>
+      <hr>
+      <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
     </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+from fasthtml.common import H4, P, Hr
+
+Alert(
+    H4("Well done!", cls="alert-heading"),
+    P("Aww yeah, you successfully read this important alert message."),
+    Hr(),
+    P("Whenever you need to, be sure to use margin utilities to keep things nice and tidy."),
+    variant="success"
+)
+```
+  </div>
+</div>
 
 ### 3. Icons
 Adding icons to alerts significantly improves user recognition of message status.
 
-!!! note "Code & Output"
-    ```python
-    Alert(
-        " An error occurred while saving.", 
-        variant="danger", 
-        icon="exclamation-triangle-fill"
-    )
-    ```
-    <div class="result" markdown>
-    ![Screenshot: Red danger alert with an exclamation icon](../../assets/images/alert-icon.png)
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="alert alert-danger d-flex align-items-center w-100" role="alert">
+      <i class="bi bi-exclamation-triangle-fill me-2"></i>
+      <div>An error occurred while saving.</div>
     </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+Alert(
+    " An error occurred while saving.", 
+    variant="danger", 
+    icon="exclamation-triangle-fill"
+)
+```
+  </div>
+</div>
 
 ---
 

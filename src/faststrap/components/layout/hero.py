@@ -4,12 +4,14 @@ from typing import Any
 
 from fasthtml.common import H1, Div, P
 
+from ...core._stability import beta
 from ...core.base import merge_classes
 from ...core.types import VariantType
 from ...utils.attrs import convert_attrs
 from .grid import Container
 
 
+@beta
 def Hero(
     title: str,
     subtitle: str | None = None,

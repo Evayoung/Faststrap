@@ -9,17 +9,21 @@ Tooltips and Popovers provide small overlays of content on hover, click, or focu
 
 ## Quick Start (Tooltip)
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview (Tooltip)</div>
+  <div class="preview-render">
+    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="I am a tooltip!">
+      Hover Me
+    </button>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-from faststrap import Tooltip, Button
-
 Tooltip(
     Button("Hover Me", variant="secondary"),
     title="I am a tooltip!"
 )
 ```
-
-<div class="result" markdown>
-![Screenshot: Mouse hovering over button shows a small black bubble above](../../assets/images/tooltip-basic.png)
+  </div>
 </div>
 
 ---
@@ -28,18 +32,22 @@ Tooltip(
 
 Popovers are similar to tooltips but can contain a title and more complex content (usually triggered by click).
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview (Popover)</div>
+  <div class="preview-render">
+    <button type="button" class="btn btn-primary" data-bs-toggle="popover" title="Rich Details" data-bs-content="This is more detailed information inside a popover.">
+      Click Me
+    </button>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-from faststrap import Popover, Button
-
 Popover(
     Button("Click Me", variant="primary"),
     title="Rich Details",
     content="This is more detailed information inside a popover."
 )
 ```
-
-<div class="result" markdown>
-![Screenshot: Clicked button shows a larger card with title and content](../../assets/images/popover-basic.png)
+  </div>
 </div>
 
 ---
@@ -50,12 +58,23 @@ Popover(
 Use the `placement` argument to control where the overlay appears.
 
 !!! note "Code & Output"
-    ```python
-    Tooltip(Button("Top"), title="On top", placement="top")
-    Tooltip(Button("Right"), title="On right", placement="right")
-    Tooltip(Button("Bottom"), title="On bottom", placement="bottom")
-    Tooltip(Button("Left"), title="On left", placement="left")
-    ```
+<div class="component-preview">
+  <div class="preview-header">Live Preview (Positioning)</div>
+  <div class="preview-render flex-wrap gap-2">
+    <button class="btn btn-sm btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="On top">Top</button>
+    <button class="btn btn-sm btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="On right">Right</button>
+    <button class="btn btn-sm btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="On bottom">Bottom</button>
+    <button class="btn btn-sm btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="On left">Left</button>
+  </div>
+  <div class="preview-code" markdown>
+```python
+Tooltip(Button("Top"), title="On top", placement="top")
+Tooltip(Button("Right"), title="On right", placement="right")
+Tooltip(Button("Bottom"), title="On bottom", placement="bottom")
+Tooltip(Button("Left"), title="On left", placement="left")
+```
+  </div>
+</div>
 
 ### 2. Activation Triggers
 Tooltips usually trigger on `hover`, but you can change this to `focus` or `click`.

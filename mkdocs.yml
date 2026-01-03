@@ -37,6 +37,12 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+  - https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+  - javascripts/init.js
 
 plugins:
   - search
@@ -69,6 +75,7 @@ nav:
     - Installation: getting-started/installation.md
     - Quick Start: getting-started/quick-start.md
     - Customization: getting-started/customization.md
+    - Visual Effects: effects.md
   - Components:
     - Forms:
       - Button: components/forms/button.md

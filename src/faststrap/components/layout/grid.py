@@ -4,6 +4,7 @@ from typing import Any, Literal
 
 from fasthtml.common import Div
 
+from ...core._stability import stable
 from ...core.base import merge_classes
 from ...utils.attrs import convert_attrs
 
@@ -11,6 +12,7 @@ BreakpointType = Literal["sm", "md", "lg", "xl", "xxl"]
 ContainerType = Literal["fluid", "sm", "md", "lg", "xl", "xxl"]
 
 
+@stable
 def Container(
     *children: Any,
     fluid: ContainerType | bool = False,
@@ -61,6 +63,7 @@ def Container(
     return Div(*children, **attrs)
 
 
+@stable
 def Row(
     *children: Any,
     cols: int | None = None,
@@ -127,6 +130,7 @@ def Row(
     return Div(*children, **attrs)
 
 
+@stable
 def Col(
     *children: Any,
     span: int | bool = True,

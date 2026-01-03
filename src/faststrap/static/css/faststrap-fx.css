@@ -1,0 +1,337 @@
+/* 
+ * FastStrap FX Module (v0.5.0)
+ * Zero-JS transitions and micro-interactions.
+ * 
+ * Architecture:
+ * - Base class: .fx (handles variables & motion safety)
+ * - Namespace: fx-*
+ * - Tokens: fx-fast, fx-delay-sm
+ */
+
+/* -------------------------------------------------------------------------- */
+/*                                 1. BASE & TOKENS                           */
+/* -------------------------------------------------------------------------- */
+
+:root {
+    --fx-duration: 300ms;
+    --fx-ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --fx-delay: 0ms;
+    --fx-scale-hover: 1.03;
+    --fx-lift-y: -4px;
+}
+
+.fx {
+    transition-property: transform, opacity, box-shadow, filter, background-color, border-color;
+    transition-duration: var(--fx-duration);
+    transition-timing-function: var(--fx-ease);
+    transition-delay: var(--fx-delay);
+    /* Ensure hardware acceleration for smooth transforms */
+    will-change: transform, opacity;
+}
+
+/* Modifiers: Speed */
+.fx-fast {
+    --fx-duration: 150ms;
+}
+
+.fx-slow {
+    --fx-duration: 500ms;
+}
+
+.fx-slower {
+    --fx-duration: 1000ms;
+}
+
+/* Modifiers: Delay */
+.fx-delay-xs {
+    --fx-delay: 100ms;
+}
+
+.fx-delay-sm {
+    --fx-delay: 200ms;
+}
+
+.fx-delay-md {
+    --fx-delay: 300ms;
+}
+
+.fx-delay-lg {
+    --fx-delay: 500ms;
+}
+
+.fx-delay-xl {
+    --fx-delay: 1000ms;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 2. ENTRANCE ANIMATIONS                     */
+/* -------------------------------------------------------------------------- */
+
+@keyframes fx-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fx-slide-up {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fx-slide-down {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -20px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fx-slide-left {
+    from {
+        opacity: 0;
+        transform: translate3d(20px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fx-slide-right {
+    from {
+        opacity: 0;
+        transform: translate3d(-20px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fx-zoom-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fx-bounce-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fx-fade-in {
+    animation: fx-fade-in var(--fx-duration) var(--fx-ease) var(--fx-delay) both;
+}
+
+.fx-slide-up {
+    animation: fx-slide-up var(--fx-duration) var(--fx-ease) var(--fx-delay) both;
+}
+
+.fx-slide-down {
+    animation: fx-slide-down var(--fx-duration) var(--fx-ease) var(--fx-delay) both;
+}
+
+.fx-slide-left {
+    animation: fx-slide-left var(--fx-duration) var(--fx-ease) var(--fx-delay) both;
+}
+
+.fx-slide-right {
+    animation: fx-slide-right var(--fx-duration) var(--fx-ease) var(--fx-delay) both;
+}
+
+.fx-zoom-in {
+    animation: fx-zoom-in var(--fx-duration) var(--fx-ease) var(--fx-delay) both;
+}
+
+.fx-bounce-in {
+    animation: fx-bounce-in var(--fx-duration) cubic-bezier(0.215, 0.61, 0.355, 1) var(--fx-delay) both;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 3. HOVER INTERACTIONS                      */
+/* -------------------------------------------------------------------------- */
+
+.fx-hover-lift:hover {
+    transform: translateY(var(--fx-lift-y));
+}
+
+.fx-hover-scale:hover {
+    transform: scale(var(--fx-scale-hover));
+}
+
+.fx-hover-glow:hover {
+    box-shadow: 0 0 15px rgba(var(--bs-primary-rgb), 0.4);
+}
+
+.fx-hover-tilt {
+    transition: transform var(--fx-duration) var(--fx-ease);
+}
+
+.fx-hover-tilt:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
+}
+
+.fx-hover-colorize {
+    filter: grayscale(100%);
+    transition: filter var(--fx-duration) var(--fx-ease);
+}
+
+.fx-hover-colorize:hover {
+    filter: grayscale(0%);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 4. LOADING STATES (HTMX)                   */
+/* -------------------------------------------------------------------------- */
+
+@keyframes fx-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fx-pulse {
+    50% {
+        opacity: .5;
+    }
+}
+
+@keyframes fx-shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.fx-spin {
+    animation: fx-spin 1s linear infinite;
+}
+
+.fx-pulse {
+    animation: fx-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.fx-shimmer {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+    background-size: 200% 100%;
+    animation: fx-shimmer 2s infinite linear;
+}
+
+[data-bs-theme="dark"] .fx-shimmer {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 5. VISUAL EFFECTS                          */
+/* -------------------------------------------------------------------------- */
+
+.fx-glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+[data-bs-theme="dark"] .fx-glass {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fx-shadow-soft {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.fx-shadow-sharp {
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+}
+
+[data-bs-theme="dark"] .fx-shadow-sharp {
+    box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes fx-gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.fx-gradient-shift {
+    background-size: 200% 200%;
+    animation: fx-gradient-shift 5s ease infinite;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 6. MOTION SAFETY (CRITICAL)                */
+/* -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .fx,
+    .fx-fade-in,
+    .fx-slide-up,
+    .fx-slide-down,
+    .fx-slide-left,
+    .fx-slide-right,
+    .fx-zoom-in,
+    .fx-bounce-in,
+    .fx-spin,
+    .fx-pulse,
+    .fx-shimmer,
+    .fx-gradient-shift,
+    .fx-hover-lift:hover,
+    .fx-hover-scale:hover,
+    .fx-hover-tilt:hover {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+}

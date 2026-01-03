@@ -53,13 +53,26 @@ FastHTML is amazing for building web apps in pure Python, but building UI from s
 
 ## At a Glance
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="card shadow-sm" style="max-width: 400px; width: 100%;">
+      <div class="card-body">
+        <h5 class="card-title">Welcome Back</h5>
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input type="text" class="form-control" placeholder="Enter username">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control">
+        </div>
+        <button class="btn btn-primary w-100 mt-3">Login</button>
+      </div>
+    </div>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-from fasthtml.common import FastHTML, serve
-from faststrap import add_bootstrap, Card, Button, Input
-
-app = FastHTML()
-add_bootstrap(app)
-
 @app.route("/")
 def home():
     return Card(
@@ -69,9 +82,9 @@ def home():
         title="Welcome Back",
         style={"max-width": "400px", "margin": "2rem auto"}
     )
-
-serve()
 ```
+  </div>
+</div>
 
 ## Features
 

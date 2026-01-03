@@ -6,20 +6,34 @@ Stat cards are used on dashboards and reports to highlight key metrics. They typ
 
 ## Quick Start
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="card w-100">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="flex-grow-1">
+            <p class="text-muted small text-uppercase fw-semibold mb-1">Total Revenue</p>
+            <h3 class="mb-0 fw-bold">$45,231.89 <span class="text-success small fw-bold ms-2">+20.1%</span></h3>
+          </div>
+          <div class="d-flex align-items-center justify-content-center rounded p-3 bg-body-tertiary">
+            <i class="bi bi-currency-dollar fs-4"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-from faststrap import StatCard
-
 StatCard(
-    label="Total Revenue",
+    title="Total Revenue",
     value="$45,231.89",
-    icon="currency-dollar",
+    icon=BI("currency-dollar"),
     trend="+20.1%",
-    trend_variant="success"
+    trend_type="up"
 )
 ```
-
-<div class="result" markdown>
-![Screenshot: Card with dollar icon, revenue number, and green trend text](../../assets/images/stat-card-basic.png)
+  </div>
 </div>
 
 ---
@@ -29,17 +43,37 @@ StatCard(
 ### 1. Negative Trends
 Use `trend_variant="danger"` for decreases in metrics.
 
-!!! note "Code & Output"
-    ```python
-    StatCard(
-        label="Active Users",
-        value="1,234",
-        trend="-5%",
-        trend_label="from last month",
-        trend_variant="danger",
-        icon="people"
-    )
-    ```
+<div class="component-preview">
+  <div class="preview-header">Live Preview (Negative Trend)</div>
+  <div class="preview-render">
+    <div class="card w-100">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="flex-grow-1">
+            <p class="text-muted small text-uppercase fw-semibold mb-1">Active Users</p>
+            <h3 class="mb-0 fw-bold">1,234 <span class="text-danger small fw-bold ms-2">-5%</span></h3>
+            <p class="text-muted small mb-0">from last month</p>
+          </div>
+          <div class="d-flex align-items-center justify-content-center rounded p-3 bg-body-tertiary">
+            <i class="bi bi-people fs-4"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+StatCard(
+    title="Active Users",
+    value="1,234",
+    trend="-5%",
+    trend_type="down",
+    icon=BI("people"),
+    footer=P("from last month", cls="text-muted small mb-0")
+)
+```
+  </div>
+</div>
 
 ### 2. Branding (Variants)
 Apply color to the icon or card borders using the `variant` argument.

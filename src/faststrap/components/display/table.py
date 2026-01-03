@@ -7,6 +7,7 @@ from typing import Any, Literal
 from fasthtml.common import Div, Tbody, Td, Th, Thead, Tr
 from fasthtml.common import Table as FTTable
 
+from ...core._stability import stable
 from ...core.base import merge_classes
 from ...utils.attrs import convert_attrs
 
@@ -16,6 +17,7 @@ TableVariantType = Literal[
 ]
 
 
+@stable
 def Table(
     *children: Any,
     striped: bool = False,
@@ -124,6 +126,7 @@ def Table(
     return table
 
 
+@stable
 def THead(
     *children: Any,
     variant: TableVariantType | None = None,
@@ -161,6 +164,7 @@ def THead(
     return Thead(*children, **attrs)
 
 
+@stable
 def TBody(
     *children: Any,
     variant: TableVariantType | None = None,
@@ -204,6 +208,7 @@ def TBody(
     return Tbody(*children, **attrs)
 
 
+@stable
 def TRow(
     *children: Any,
     variant: TableVariantType | None = None,
@@ -244,6 +249,7 @@ def TRow(
     return Tr(*children, **attrs)
 
 
+@stable
 def TCell(
     *children: Any,
     header: bool = False,

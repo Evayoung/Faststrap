@@ -49,19 +49,25 @@ class BaseComponent(ABC):
         return merged
 
 
-def merge_classes(*class_lists: str | None) -> str:
-    """Merge multiple class strings, removing duplicates."""
+def merge_classes(*class_lists: Any) -> str:
+    """Merge multiple class strings or lists, removing duplicates."""
     classes: list[str] = []
     seen = set()
 
-    for item in class_lists:
+    def _process(item: Any):
         if not item:
-            continue
+            return
+        if isinstance(item, (list, tuple)):
+            for sub in item:
+                _process(sub)
+        elif isinstance(item, str):
+            for cls in item.split():
+                cls = cls.strip()
+                if cls and cls not in seen:
+                    classes.append(cls)
+                    seen.add(cls)
 
-        for cls in item.split():
-            cls = cls.strip()
-            if cls and cls not in seen:
-                classes.append(cls)
-                seen.add(cls)
+    for item in class_lists:
+        _process(item)
 
     return " ".join(classes)

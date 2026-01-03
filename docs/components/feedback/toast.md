@@ -11,14 +11,23 @@ Toasts are lightweight, non-blocking notifications. They are designed to mimic t
 
 In FastStrap, we use `SimpleToast` for the most common case: a simple text message with a variant color.
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render" style="background: #f0f2f5;">
+    <div class="toast show align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          Success! Item added to cart.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-from faststrap import SimpleToast
-
 SimpleToast("Success! Item added to cart.", variant="success")
 ```
-
-<div class="result" markdown>
-![Screenshot: A small green notification bubble at bottom-right](../../assets/images/toast-basic.png){ width=300 }
+  </div>
 </div>
 
 ---
@@ -38,16 +47,31 @@ Standard colors to communicate status.
 For rich content, headers, and custom timing, use the base `Toast` component.
 
 !!! note "Code & Output"
-    ```python
-    from faststrap import Toast, Button
-
-    Toast(
-        "Your message has been sent.",
-        header="Messenger",
-        body_cls="p-3",
-        delay=5000 # Closes after 5 seconds
-    )
-    ```
+<div class="component-preview">
+  <div class="preview-header">Live Preview (Rich Toast)</div>
+  <div class="preview-render" style="background: #f0f2f5;">
+    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Messenger</strong>
+        <small>Just now</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Your message has been sent.
+      </div>
+    </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+Toast(
+    "Your message has been sent.",
+    header="Messenger",
+    body_cls="p-3",
+    delay=5000
+)
+```
+  </div>
+</div>
 
 ### 3. Toast Container
 Toasts are often grouped. FastStrap handles the `ToastContainer` logic to ensure they stack correctly in the corner of the screen.

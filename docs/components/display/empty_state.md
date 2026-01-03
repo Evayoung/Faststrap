@@ -6,9 +6,18 @@ The `EmptyState` component provides a visual placeholder for when data is missin
 
 ## Quick Start
 
+<div class="component-preview">
+  <div class="preview-header">Live Preview</div>
+  <div class="preview-render">
+    <div class="text-center p-5 bg-body-tertiary rounded w-100">
+      <i class="bi bi-search display-1 text-muted mb-3 d-block"></i>
+      <h3 class="fw-bold">No items found</h3>
+      <p class="text-muted mb-4">You haven't added any items to your collection yet.</p>
+      <button class="btn btn-primary">Add First Item</button>
+    </div>
+  </div>
+  <div class="preview-code" markdown>
 ```python
-from faststrap import EmptyState, Button
-
 EmptyState(
     title="No items found",
     description="You haven't added any items to your collection yet.",
@@ -16,9 +25,7 @@ EmptyState(
     action=Button("Add First Item", variant="primary")
 )
 ```
-
-<div class="result" markdown>
-![Screenshot: Centered icon, title, text, and button](../../assets/images/empty-state-basic.png)
+  </div>
 </div>
 
 ---
@@ -32,14 +39,31 @@ Use inside cards or grids to signify empty data sets.
     ```python
     from faststrap import Card
 
-    Card(
-        EmptyState(
-            title="No Activity",
-            description="Log some activity to see it here.",
-            icon="activity",
-            variant="light"
-        )
+<div class="component-preview">
+  <div class="preview-header">Live Preview (Card Placeholder)</div>
+  <div class="preview-render">
+    <div class="card shadow-sm w-100">
+      <div class="card-body">
+        <div class="text-center p-4">
+          <i class="bi bi-activity h1 text-muted mb-2 d-block"></i>
+          <h5 class="fw-semibold">No Activity</h5>
+          <p class="text-muted small mb-0">Log some activity to see it here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preview-code" markdown>
+```python
+Card(
+    EmptyState(
+        title="No Activity",
+        description="Log some activity to see it here.",
+        icon="activity"
     )
+)
+```
+  </div>
+</div>
     ```
 
 ---
