@@ -75,6 +75,15 @@ from .components.navigation import (
     TabPane,
     Tabs,
 )
+
+# Patterns
+from .components.patterns import (
+    Feature,
+    FeatureGrid,
+    NavbarModern,
+    PricingGroup,
+    PricingTier,
+)
 from .core._stability import beta, experimental, stable
 from .core.assets import add_bootstrap, get_assets
 from .core.base import merge_classes
@@ -88,6 +97,7 @@ from .core.theme import (
     resolve_defaults,
     set_component_defaults,
 )
+from .layouts import DashboardLayout, LandingLayout
 
 # Utils
 from .utils import cleanup_static_resources, get_faststrap_static_url
@@ -163,6 +173,15 @@ __all__ = [
     "DropdownDivider",
     "Tabs",
     "TabPane",
+    # Layouts
+    "DashboardLayout",
+    "LandingLayout",
+    # Patterns
+    "NavbarModern",
+    "Feature",
+    "FeatureGrid",
+    "PricingGroup",
+    "PricingTier",
     # Utils
     "Icon",
     "get_faststrap_static_url",

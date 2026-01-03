@@ -54,6 +54,7 @@ def local_assets(static_url: str) -> tuple[Any, ...]:
         Link(rel="stylesheet", href=f"{base}/css/bootstrap.min.css"),
         Link(rel="stylesheet", href=f"{base}/css/bootstrap-icons.min.css"),
         Link(rel="stylesheet", href=f"{base}/css/faststrap-fx.css"),
+        Link(rel="stylesheet", href=f"{base}/css/faststrap-layouts.css"),
         Script(src=f"{base}/js/bootstrap.bundle.min.js"),
     )
 
