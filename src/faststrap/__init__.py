@@ -75,10 +75,10 @@ from .components.navigation import (
     TabPane,
     Tabs,
 )
-from .core.effects import Fx
+from .core._stability import beta, experimental, stable
 from .core.assets import add_bootstrap, get_assets
 from .core.base import merge_classes
-from .core._stability import experimental, stable, beta
+from .core.effects import Fx
 from .core.theme import (
     Theme,
     create_theme,

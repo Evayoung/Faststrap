@@ -1,19 +1,22 @@
 from fasthtml.common import *
+
 from faststrap import *
+
 
 def render_achievement(title, value, icon):
     return Col(
         StatCard(
-            title, 
-            value, 
-            icon=Icon(icon), 
-            variant="dark", 
-            inverse=True, 
-            cls="h-100 border-secondary"
+            title,
+            value,
+            icon=Icon(icon),
+            variant="dark",
+            inverse=True,
+            cls="h-100 border-secondary",
         ),
         md=4,
-        cls="mb-4"
+        cls="mb-4",
     )
+
 
 def home():
     # Navbar (Transparent effect)
@@ -24,7 +27,7 @@ def home():
         expand="lg",
         variant="dark",
         bg="dark",
-        sticky="top"
+        sticky="top",
     )
 
     # Premium Hero with Background Image (Mockup)
@@ -35,7 +38,7 @@ def home():
         bg_variant="dark",
         align="center",
         py="5",
-        style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; min-height: 80vh; display: flex; align-items: center;"
+        style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; min-height: 80vh; display: flex; align-items: center;",
     )
 
     # Stats Section (3 columns on desktop, 1 on mobile)
@@ -47,7 +50,7 @@ def home():
                 render_achievement("Happy Clients", "85", "emoji-smile"),
             )
         ),
-        cls="py-5 bg-dark"
+        cls="py-5 bg-dark",
     )
 
     # Featured Work (3 columns on desktop, 1 on mobile)
@@ -55,20 +58,58 @@ def home():
         Container(
             H2("Featured Works", cls="text-center text-white mb-5"),
             Row(
-                Col(Card(Img(src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80", cls="card-img-top"), title="E-Commerce Redesign", body="UI/UX improvement for global retailer.", cls="bg-dark text-white border-secondary mb-4"), md=4),
-                Col(Card(Img(src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80", cls="card-img-top"), title="FinTech Dashboard", body="Complex data viz for banking platform.", cls="bg-dark text-white border-secondary mb-4"), md=4),
-                Col(Card(Img(src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80", cls="card-img-top"), title="Developer Tooling", body="Optimizing workflows for teams.", cls="bg-dark text-white border-secondary mb-4"), md=4),
-            )
+                Col(
+                    Card(
+                        Img(
+                            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80",
+                            cls="card-img-top",
+                        ),
+                        title="E-Commerce Redesign",
+                        body="UI/UX improvement for global retailer.",
+                        cls="bg-dark text-white border-secondary mb-4",
+                    ),
+                    md=4,
+                ),
+                Col(
+                    Card(
+                        Img(
+                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80",
+                            cls="card-img-top",
+                        ),
+                        title="FinTech Dashboard",
+                        body="Complex data viz for banking platform.",
+                        cls="bg-dark text-white border-secondary mb-4",
+                    ),
+                    md=4,
+                ),
+                Col(
+                    Card(
+                        Img(
+                            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80",
+                            cls="card-img-top",
+                        ),
+                        title="Developer Tooling",
+                        body="Optimizing workflows for teams.",
+                        cls="bg-dark text-white border-secondary mb-4",
+                    ),
+                    md=4,
+                ),
+            ),
         ),
-        cls="py-5 bg-black"
+        cls="py-5 bg-black",
     )
 
     return Title("Premium Portfolio"), Main(nav, hero, stats, work)
 
+
 app = FastHTML()
 add_bootstrap(app, theme="green-nature", mode="dark")
 
-@app.route("/")
-def get(): return home()
 
-if __name__ == "__main__": serve()
+@app.route("/")
+def get():
+    return home()
+
+
+if __name__ == "__main__":
+    serve()

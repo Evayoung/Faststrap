@@ -50,7 +50,7 @@ custom_css = """
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-""" 
+"""
 hrds = (
     Style(custom_css),
     # Link(rel="", href=""), add more custom head elements if needed

@@ -1,7 +1,7 @@
 """
 Faststrap Effects Module (Zero-JS)
 
-This module provides the `Fx` helper class, which exposes standard CSS classes 
+This module provides the `Fx` helper class, which exposes standard CSS classes
 for animations, transitions, and micro-interactions defined in `faststrap-fx.css`.
 
 Usage:
@@ -10,12 +10,13 @@ Usage:
     Card(..., cls=[Fx.base, Fx.fade_in, Fx.hover_lift])
 """
 
+
 class Fx:
     """
     Zero-JS Effects Helper.
     Combines with `cls` argument in FastHTML components.
     """
-    
+
     # --------------------------------------------------------------------------
     # 1. Base Class (Required for transitions to work properly)
     # --------------------------------------------------------------------------
@@ -25,12 +26,12 @@ class Fx:
     # 2. Entrance Animations (Appear on load/swap)
     # --------------------------------------------------------------------------
     fade_in = "fx-fade-in"
-    slide_up = "fx-slide-up"      # Roadmap compliant
+    slide_up = "fx-slide-up"  # Roadmap compliant
     slide_down = "fx-slide-down"  # Roadmap compliant
     slide_left = "fx-slide-left"  # Roadmap compliant
-    slide_right = "fx-slide-right"# Roadmap compliant
+    slide_right = "fx-slide-right"  # Roadmap compliant
     zoom_in = "fx-zoom-in"
-    bounce_in = "fx-bounce-in"    # New
+    bounce_in = "fx-bounce-in"  # New
 
     # Contextual aliases for backward compatibility or clearer intent
     fade_in_up = slide_up
@@ -64,8 +65,8 @@ class Fx:
     # 6. Modifiers (Tokens)
     # --------------------------------------------------------------------------
     # Speed
-    fast = "fx-fast"      # 150ms
-    slow = "fx-slow"      # 500ms
+    fast = "fx-fast"  # 150ms
+    slow = "fx-slow"  # 500ms
     slower = "fx-slower"  # 1000ms
 
     # Delay

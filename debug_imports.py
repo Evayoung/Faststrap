@@ -1,17 +1,18 @@
 try:
     print("Attempting imports...")
     from faststrap import (
-        FileInput,
-        Tooltip,
-        Popover,
-        Figure,
-        EmptyState,
-        StatCard,
         ConfirmDialog,
+        EmptyState,
+        Figure,
+        FileInput,
         Hero,
+        Popover,
+        StatCard,
+        Tooltip,
     )
+
     print("Imports successful!")
-    
+
     # Quick instantiation check
     print("Instantiating components...")
     f = FileInput("test")
@@ -29,4 +30,5 @@ except ImportError as e:
 except Exception as e:
     print(f"Error: {e}")
     import traceback
+
     traceback.print_exc()

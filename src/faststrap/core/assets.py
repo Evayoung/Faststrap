@@ -159,7 +159,9 @@ def get_assets(
         font_url = f"https://fonts.googleapis.com/css2?family={font_family.replace(' ', '+')}:wght@{weights_str}&display=swap"
         # Add preconnect for performance
         elements.insert(0, Link(rel="preconnect", href="https://fonts.googleapis.com"))
-        elements.insert(1, Link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin=True))
+        elements.insert(
+            1, Link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin=True)
+        )
         elements.insert(2, Link(rel="stylesheet", href=font_url))
 
     if include_custom:

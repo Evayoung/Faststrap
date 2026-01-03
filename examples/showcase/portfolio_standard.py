@@ -1,13 +1,16 @@
 from fasthtml.common import *
+
 from faststrap import *
+
 
 def render_project(title, desc, tags):
     return Card(
         P(desc),
         header=H5(title),
         footer=Div(*[Badge(t, variant="secondary", cls="me-1") for t in tags]),
-        cls="h-100 shadow-sm"
+        cls="h-100 shadow-sm",
     )
+
 
 def home():
     # Navbar
@@ -21,7 +24,7 @@ def home():
         sticky="top",
         bg="white",
         variant="light",
-        cls="border-bottom"
+        cls="border-bottom",
     )
 
     # Hero
@@ -31,7 +34,7 @@ def home():
         cta=Button("View My Work", href="#projects", variant="primary", size="lg"),
         align="center",
         py="5",
-        cls="bg-light"
+        cls="bg-light",
     )
 
     # Projects (3 columns on desktop, 1 on mobile)
@@ -39,12 +42,36 @@ def home():
         Container(
             H2("Projects", id="projects", cls="text-center mb-5"),
             Row(
-                Col(render_project("FastStrap", "A Bootstrap components library for FastHTML", ["Python", "Bootstrap", "HTMX"]), md=4, cls="mb-4"),
-                Col(render_project("CyberDash", "A security monitoring dashboard with real-time alerts", ["FastAPI", "Redis", "D3.js"]), md=4, cls="mb-4"),
-                Col(render_project("PyFolio", "Automated portfolio generator for developers", ["Markdown", "CI/CD"]), md=4, cls="mb-4"),
-            )
+                Col(
+                    render_project(
+                        "FastStrap",
+                        "A Bootstrap components library for FastHTML",
+                        ["Python", "Bootstrap", "HTMX"],
+                    ),
+                    md=4,
+                    cls="mb-4",
+                ),
+                Col(
+                    render_project(
+                        "CyberDash",
+                        "A security monitoring dashboard with real-time alerts",
+                        ["FastAPI", "Redis", "D3.js"],
+                    ),
+                    md=4,
+                    cls="mb-4",
+                ),
+                Col(
+                    render_project(
+                        "PyFolio",
+                        "Automated portfolio generator for developers",
+                        ["Markdown", "CI/CD"],
+                    ),
+                    md=4,
+                    cls="mb-4",
+                ),
+            ),
         ),
-        cls="py-5"
+        cls="py-5",
     )
 
     # Skills (using Badges)
@@ -58,27 +85,31 @@ def home():
                 Badge("HTMX", variant="success", pill=True, cls="fs-5 m-1"),
                 Badge("PostgreSQL", variant="dark", pill=True, cls="fs-5 m-1"),
                 Badge("Docker", variant="secondary", pill=True, cls="fs-5 m-1"),
-                cls="text-center"
-            )
+                cls="text-center",
+            ),
         ),
-        cls="py-5 bg-white"
+        cls="py-5 bg-white",
     )
 
     # Footer
     footer = Div(
         Container(
-            P("© 2026 John Doe. Built with FastStrap.", cls="text-muted mb-0"),
-            cls="text-center"
+            P("© 2026 John Doe. Built with FastStrap.", cls="text-muted mb-0"), cls="text-center"
         ),
-        cls="py-4 border-top"
+        cls="py-4 border-top",
     )
 
     return Title("John Doe Portfolio"), Main(nav, hero, projects, skills, footer)
 
+
 app = FastHTML()
 add_bootstrap(app)
 
-@app.route("/")
-def get(): return home()
 
-if __name__ == "__main__": serve()
+@app.route("/")
+def get():
+    return home()
+
+
+if __name__ == "__main__":
+    serve()

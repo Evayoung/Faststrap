@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from typing import TypeVar, Callable
+from collections.abc import Callable
+from typing import TypeVar
 
 F = TypeVar("F", bound=Callable)
 
@@ -17,8 +18,8 @@ def stable(func: F) -> F:
     """
     # Use setattr to allow type checkers to see the attribute if needed
     # but primarily this is for runtime inspection/documentation
-    setattr(func, "__faststrap_stable__", True)
-    setattr(func, "__faststrap_stability__", "stable")
+    func.__faststrap_stable__ = True
+    func.__faststrap_stability__ = "stable"
     return func
 
 
@@ -30,8 +31,8 @@ def beta(func: F) -> F:
         @beta
         def NewComponent(...): ...
     """
-    setattr(func, "__faststrap_beta__", True)
-    setattr(func, "__faststrap_stability__", "beta")
+    func.__faststrap_beta__ = True
+    func.__faststrap_stability__ = "beta"
     return func
 
 
@@ -43,6 +44,6 @@ def experimental(func: F) -> F:
         @experimental
         def ExperimentalComp(...): ...
     """
-    setattr(func, "__faststrap_experimental__", True)
-    setattr(func, "__faststrap_stability__", "experimental")
+    func.__faststrap_experimental__ = True
+    func.__faststrap_stability__ = "experimental"
     return func
