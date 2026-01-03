@@ -54,7 +54,7 @@ def merge_classes(*class_lists: Any) -> str:
     classes: list[str] = []
     seen = set()
 
-    def _process(item: Any):
+    def _process(item: Any) -> None:
         if not item:
             return
         if isinstance(item, (list, tuple)):
