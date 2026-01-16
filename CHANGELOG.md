@@ -5,7 +5,38 @@ All notable changes to Faststrap will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.5.0] - 2026-01-16
+
+### Added
+- **Phase 5: Composed UI & Design System Layer**
+  - **Image**: Responsive images with fluid, thumbnail, rounded, rounded circle, and alignment utilities
+    - Lazy loading support with `loading="lazy"`
+    - Dimension control with `width` and `height`
+    - Accessibility with `alt` text
+  - **Carousel**: Auto-play image sliders with controls, indicators, and fade transitions
+    - `CarouselItem` component for individual slides with captions
+    - Configurable interval, keyboard navigation, pause on hover
+    - Dark variant for controls and indicators
+  - **Placeholder**: Skeleton loading screens with glow/wave animations
+    - `PlaceholderCard` - Pre-built card skeleton
+    - `PlaceholderButton` - Button-shaped placeholder
+    - Configurable size, color variants, and animations
+  - **Scrollspy**: Auto-updating navigation based on scroll position
+    - Offset configuration for fixed navbars
+    - Smooth scroll support
+    - Method configuration (auto, offset, position)
+  - **SidebarNavbar**: Premium vertical sidebar for dashboards
+    - `SidebarNavItem` component for individual items
+    - Icon support with Bootstrap Icons
+    - Light/dark themes, sticky positioning
+    - Configurable width and collapsible mobile support
+  - **GlassNavbar**: Premium glassmorphism navbar with blur and transparency
+    - `GlassNavItem` component for individual items
+    - Configurable blur strength (low, medium, high)
+    - Transparency control (0.0-1.0)
+    - Safari support with -webkit-backdrop-filter
+  - **FeatureGrid**: Grid layout for feature sections (Pattern component)
+  - **PricingGroup**: Horizontal pricing tier layout (Pattern component)
 
 ### Fixed
 - **Critical Bug**: Fixed static file mounting issue with `fast_app()` where Bootstrap CSS and JS files returned 404 errors
@@ -13,6 +44,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Static files now mount correctly with both `FastHTML()` and `fast_app()` initialization patterns
   - Added error handling for duplicate mount attempts
   - **Impact**: Developers can now use `fast_app()` without workarounds
+
+### Changed
+- Component count: 45 → 51 components
+- Updated examples with `phase5_demo.py` showcasing all new components
+- Documentation updated to reflect Phase 5 completion
+
 
 ## [0.4.6] - 2026-01-03
 

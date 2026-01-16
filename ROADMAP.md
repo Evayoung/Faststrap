@@ -114,8 +114,8 @@ Faststrap commits to the following architectural contracts:
 | 2 | `DashboardLayout` | layouts | Planned | Admin panel layout with sidebar |
 | 3 | `LandingLayout` | layouts | Planned | Marketing page layout |
 | 4 | `NavbarModern` | patterns | ✅ Complete | Implemented as `GlassNavbar` |
-| 5 | `FeatureGrid` | patterns | Planned | Icon + Title + Text grid |
-| 6 | `PricingGroup` | patterns | Planned | 3-column pricing cards |
+| 5 | `FeatureGrid` | patterns | ✅ Complete | Icon + Title + Text grid |
+| 6 | `PricingGroup` | patterns | ✅ Complete | 3-column pricing cards |
 | 7 | `TestimonialSection` | patterns | Planned | Customer testimonials |
 | 8 | `FooterModern` | patterns | Planned | Modern multi-column footer |
 

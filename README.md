@@ -14,7 +14,7 @@
 
 FastHTML is amazing for building web apps in pure Python, but it lacks pre-built UI components. FastStrap fills that gap by providing:
 
-✅ **45+ Bootstrap components** - Buttons, Cards, Modals, Forms, Navigation, and more  
+✅ **51 Bootstrap components** - Buttons, Cards, Modals, Forms, Navigation, and more  
 ✅ **Zero JavaScript knowledge required** - Components just work  
 ✅ **No build steps** - Pure Python, no npm/webpack/vite  
 ✅ **Full HTMX integration** - Dynamic updates without page reloads  
@@ -225,7 +225,7 @@ modal = get_component("Modal")
 
 ---
 
-## Available Components (45 Total)
+## Available Components (51 Total)
 
 All components are production-ready with comprehensive documentation, HTMX integration, and accessibility features.
 
@@ -244,7 +244,7 @@ All components are production-ready with comprehensive documentation, HTMX integ
 - **InputGroup** - Input addons (text, buttons, icons)
 - **FloatingLabel** - Animated floating labels
 
-### Display (7 Components)
+### Display (10 Components)
 - **Card** - Content containers with headers/footers/images
 - **Badge** - Status indicators and labels
 - **Table** - Data tables with striped, hover, bordered styles
@@ -252,6 +252,9 @@ All components are production-ready with comprehensive documentation, HTMX integ
 - **Icon** - Bootstrap Icons helper (2,000+ icons)
 - **EmptyState** - Empty state placeholders
 - **StatCard** - Statistics display cards
+- **Image** - Responsive images with fluid, thumbnail, rounded, alignment
+- **Carousel** - Auto-play image sliders with controls, indicators, fade
+- **Placeholder** - Skeleton loading with glow/wave animations
 
 ### Feedback (10 Components)
 - **Alert** - Dismissible alerts with variants
@@ -267,7 +270,7 @@ All components are production-ready with comprehensive documentation, HTMX integ
 - **Popover** - Click popovers
 - **Collapse** - Show/hide content areas
 
-### Navigation (11 Components)
+### Navigation (14 Components)
 - **Navbar** - Responsive navigation bars
 - **NavbarModern** - Glassmorphism navbar
 - **Tabs** - Navigation tabs and pills
@@ -282,6 +285,9 @@ All components are production-ready with comprehensive documentation, HTMX integ
 - **ListGroup** - Versatile content lists
 - **ListGroupItem** - List items with badges/variants
 - **Drawer** - Offcanvas side panels
+- **Scrollspy** - Auto-updating navigation based on scroll
+- **SidebarNavbar** - Premium vertical sidebar for dashboards
+- **GlassNavbar** - Premium glassmorphism navbar
 
 ### Layout (4 Components)
 - **Container** - Responsive containers (fixed/fluid)
