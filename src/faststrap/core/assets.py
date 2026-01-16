@@ -318,11 +318,15 @@ def add_bootstrap(
             static_path = get_static_path()
             # Use insert(0) to ensure static route takes precedence over catch-all routes (like fast_app's /{path})
             from starlette.routing import Mount
-            app.routes.insert(0, Mount(
-                actual_static_url,
-                StaticFiles(directory=str(static_path)),
-                name="faststrap_static",
-            ))
+
+            app.routes.insert(
+                0,
+                Mount(
+                    actual_static_url,
+                    StaticFiles(directory=str(static_path)),
+                    name="faststrap_static",
+                ),
+            )
             app._faststrap_static_url = actual_static_url
         except Exception as e:
             # Check if this is a "already mounted" error (which is fine)

@@ -10,7 +10,7 @@ from faststrap import (
     PlaceholderButton,
     PlaceholderCard,
     Scrollspy,
-    clear_component_defaults,
+    reset_component_defaults,
     set_component_defaults,
 )
 
@@ -83,14 +83,14 @@ class TestImage:
         html = to_xml(img)
         assert "img-fluid" in html
         assert "rounded" in html
-        clear_component_defaults()
+        reset_component_defaults()
 
     def test_explicit_overrides_defaults(self):
         set_component_defaults("Image", fluid=True)
         img = Image(src="test.jpg", fluid=False)
         html = to_xml(img)
         assert "img-fluid" not in html
-        clear_component_defaults()
+        reset_component_defaults()
 
 
 class TestCarousel:
@@ -210,7 +210,7 @@ class TestCarousel:
         assert "carousel-control-prev" in html
         assert "carousel-indicators" in html
         assert "carousel-fade" in html
-        clear_component_defaults()
+        reset_component_defaults()
 
 
 class TestPlaceholder:
@@ -297,7 +297,7 @@ class TestPlaceholder:
         html = to_xml(ph)
         assert "placeholder-glow" in html
         assert "bg-secondary" in html
-        clear_component_defaults()
+        reset_component_defaults()
 
 
 class TestScrollspy:

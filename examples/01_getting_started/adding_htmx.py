@@ -89,13 +89,13 @@ counter_value = 0
 
 
 @app.route("/load-content")
-def get():
+def get():  # noqa: F811
     time.sleep(0.5)  # Simulate loading
     return Alert("Content loaded successfully from the server!", variant="success")
 
 
 @app.route("/search")
-def get(search: str = ""):
+def get(search: str = ""):  # noqa: F811
     if not search:
         return P("Start typing to see results...", cls="text-muted")
 
@@ -112,7 +112,7 @@ def post():
 
 
 @app.route("/counter/decrease")
-def post():
+def post():  # noqa: F811
     global counter_value
     counter_value -= 1
     return str(counter_value)
