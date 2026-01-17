@@ -60,6 +60,23 @@ serve()
 
 That's it! You now have a modern, responsive web app with zero JavaScript.
 
+### Working with Static Files
+
+Faststrap V0.5.1+ includes a helper to easily mount your own static files (images, CSS, etc.):
+
+```python
+from faststrap import mount_assets
+
+# Mount your "assets" directory at "/assets" URL
+mount_assets(app, "assets")
+
+# Use in your app
+Img(src="/assets/logo.png")
+Div(style="background-image: url('/assets/hero.jpg')")
+```
+
+See [Static Files Guide](docs/STATIC_FILES.md) for more details.
+
 ---
 
 ## Enhanced Features
@@ -728,6 +745,30 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 - 🗺️ **Roadmap**: [ROADMAP.md](ROADMAP.md)
 - 🤝 **Contributing**: [CONTRIBUTING.md](CONTRIBUTING.md)
 - 📝 **Changelog**: [CHANGELOG.md](CHANGELOG.md)
+
+---
+
+## Troubleshooting
+
+### Static Files Not Loading (404 Errors)
+
+**Problem**: Background images or custom assets return 404 Not Found.
+
+**Solution**: Use `mount_assets()` to properly mount your static directory:
+
+```python
+from faststrap import mount_assets
+
+mount_assets(app, "assets")  # Mounts assets/ at /assets/
+```
+
+Then reference files with the correct path:
+```python
+Div(style="background-image: url('/assets/hero-bg.jpg')")  # ✅ Correct
+Div(style="background-image: url('/hero-bg.jpg')")         # ❌ Wrong
+```
+
+See [Static Files](docs/STATIC_FILES.md) for full guide.
 
 ---
 
