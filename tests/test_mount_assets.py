@@ -82,8 +82,6 @@ def test_mount_assets_no_priority(tmp_path):
     def test_route():
         return "test"
 
-
-
     # Mount with priority=False (should be last)
     mount_assets(app, str(assets_dir), url_path="/assets", priority=False)
 
@@ -130,8 +128,6 @@ def test_mount_assets_auto_name_generation(tmp_path):
     """Test automatic name generation from URL path."""
     assets_dir = tmp_path / "assets"
     assets_dir.mkdir()
-
-
 
     # Test various URL paths
     test_cases = [
