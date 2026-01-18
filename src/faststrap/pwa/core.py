@@ -131,7 +131,7 @@ def add_pwa(
     }
 
     @app.get("/manifest.json")
-    def manifest():
+    def manifest() -> JSONResponse:
         return JSONResponse(manifest_data)
 
     # 3. Serve Service Worker
@@ -140,7 +140,7 @@ def add_pwa(
         sw_path = Path(__file__).parent / "templates" / "sw.js"
 
         @app.get("/sw.js")
-        def sw():
+        def sw() -> FileResponse:
             return FileResponse(sw_path, media_type="application/javascript")
 
         # Register the SW in the app (inject script)
@@ -161,7 +161,7 @@ def add_pwa(
     if offline_page:
 
         @app.get("/offline")
-        def offline():
+        def offline() -> Any:
             return (
                 Title("Offline - " + name),
                 EmptyState(
