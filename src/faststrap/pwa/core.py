@@ -6,7 +6,7 @@ from typing import Any
 from fasthtml.common import Link, Meta, Script, Title
 from starlette.responses import FileResponse, JSONResponse
 
-from ..components.feedback.empty_state import EmptyState
+from ..components.display.empty_state import EmptyState
 
 
 def PwaMeta(
