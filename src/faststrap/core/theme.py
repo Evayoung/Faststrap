@@ -497,9 +497,7 @@ def reset_component_defaults(component: str | None = None) -> None:
 
     if component is None:
         # Reset all components to original defaults
-        _COMPONENT_DEFAULTS = {
-            k: v.copy() for k, v in _DEFAULT_COMPONENT_DEFAULTS.items()
-        }
+        _COMPONENT_DEFAULTS = {k: v.copy() for k, v in _DEFAULT_COMPONENT_DEFAULTS.items()}
     elif component in _DEFAULT_COMPONENT_DEFAULTS:
         # Reset specific component to original default
         _COMPONENT_DEFAULTS[component] = _DEFAULT_COMPONENT_DEFAULTS[component].copy()
