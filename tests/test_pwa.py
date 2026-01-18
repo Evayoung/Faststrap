@@ -1,6 +1,6 @@
 """Tests for PWA module."""
 
-from fasthtml.common import FastHTML, Link, Meta, Script
+from fasthtml.common import FastHTML
 
 from faststrap.pwa import PwaMeta, add_pwa
 
@@ -29,9 +29,7 @@ def test_add_pwa_injection():
     # Check headers injected
     assert len(app.hdrs) > 0
     # Check for service worker registration script
-    assert any(
-        h.tag == "script" and "navigator.serviceWorker.register" in str(h) for h in app.hdrs
-    )
+    assert any(h.tag == "script" and "navigator.serviceWorker.register" in str(h) for h in app.hdrs)
 
     # Check routes added
     route_paths = [r.path for r in app.routes]
