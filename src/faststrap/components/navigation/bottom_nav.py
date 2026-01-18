@@ -69,7 +69,8 @@ def BottomNav(
     # For now, children (BottomNavItem) are independent
 
     content = Div(
-        *children, cls="container-fluid d-flex justify-content-around align-items-center h-100 px-0"
+        *children,
+        cls="container-fluid d-flex flex-nowrap justify-content-around align-items-center h-100 px-0",
     )
 
     return Nav(content, **attrs)
@@ -101,6 +102,7 @@ def BottomNavItem(
         "align-items-center",
         "justify-content-center",
         "w-100",
+        "flex-grow-1",
         "py-2",
     ]
 
